@@ -1,48 +1,53 @@
 grammar MiniJava;
 
-goal: MainClass(ClassDeclaration)* ;
-MainClass: 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Identifier ')' '{' Statement '}' '}' ;
-ClassDeclaration: 'class' Identifier ( 'extends' Identifier )? '{' ( VarDeclaration )* ( MethodDeclaration )* '}';
-Statement: '{' ( Statement )* '}'
-|   'if' '(' Expression ')' Statement 'else' Statement
-|   'while' '(' Expression ')' Statement
-|   'System.out.println' '(' Expression ')' ';'
-|   Identifier '=' Expression ';'
-|   Identifier '[' Expression ']' '=' Expression ';';
-VarDeclaration: Type Identifier ';';
-MethodDeclaration: 'public' Type Identifier '(' ( Type Identifier ( ',' Type Identifier )* )? ')' '{' ( VarDeclaration )* ( Statement )* 'return' Expression ';' '}';
-Type: 'int' '[' ']'
+goal : mainClass (classDeclaration)* ;
+mainClass : 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Identifier ')' '{' statement '}' '}' ;
+classDeclaration: 'class' Identifier ( 'extends' Identifier )? '{' ( varDeclaration )* ( methodDeclaration )* '}' ;
+statement : '{' ( statement )* '}'
+|   'if' '(' expression ')' statement 'else' statement
+|   'while' '(' expression ')' statement
+|   'System.out.println' '(' expression ')' ';'
+|   Identifier '=' expression ';'
+|   Identifier '[' expression ']' '=' expression ';';
+varDeclaration: type Identifier ';';
+methodDeclaration: 'public' type Identifier '(' ( type Identifier ( ',' type Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}' ;
+type: 'int' '[' ']'
 |   'boolean'
 |   'int'
 |   Identifier;
 //fragment
-//Expression: 
-//| Expression '[' Expression ']'
-//| Expression '.' 'length'
-//| Expression '.' Identifier '(' ( Expression ( ',' Expression )* )? ')'
-//| Expression ( '&&' | '<' | '+' | '-' | '*' ) Expression
+//expression: 
+//| expression '[' expression ']'
+//| expression '.' 'length'
+//| expression '.' Identifier '(' ( expression ( ',' expression )* )? ')'
+//| expression ( '&&' | '<' | '+' | '-' | '*' ) expression
 // 'true'
 //|   IntergerLiteral
 //|   'false'
 //|   Identifier
 //|   'this'
-//|   'new' 'int' '[' Expression ']'
+//|   'new' 'int' '[' expression ']'
 //|   'new' Identifier '(' ')'
-//|   '!' Expression
-//|   '(' Expression ')' ;
-Expression: 'true' Expression2
-|   'false' Expression2
-|   Identifier Expression2
-|   'this' Expression2
-|   'new' 'int' '[' Expression ']' Expression2
-|   'new' Identifier '(' ')' Expression2
-|   '!' Expression Expression2
-|   '(' Expression ')' Expression2;
-fragment
-Expression2: '[' Expression ']' Expression2
-|   '.' 'length' Expression2
-|   '.' Identifier '(' ( Expression ( ',' Expression )* )? ')' Expression2
-|   ( '&&' | '<' | '+' | '-' | '*' ) Expression Expression2 ;
+//|   '!' expression
+//|   '(' expression ')' ;
+expression: 'true' expression2
+|   'false' expression2
+|   Identifier expression2
+|   'this' expression2
+|   'new' 'int' '[' expression ']' expression2
+|   'new' Identifier '(' ')' expression2
+|   '!' expression expression2
+|   '(' expression ')' expression2;
 
-IntergerLiteral: [+-]?[[1-9]+[0-9]*;
-Identifier: [a-zA-Z][a-zA-Z0-9_]*;
+expression2: '[' expression ']' expression2
+|   '.' 'length' expression2
+|   '.' Identifier '(' ( expression ( ',' expression )* )? ')' expression2
+|   ( '&&' | '<' | '+' | '-' | '*' ) expression expression2 
+|   ;
+
+IntergerLiteral : [+-]?[[1-9][0-9]*;
+Identifier : [a-zA-Z_] [a-zA-Z0-9_]*;
+
+WS : [ \t\r\n]+ -> skip ;
+Comment : '/*' .*? '*/' -> skip ;
+LineComment : '//' ~[\r\n]* -> skip ; 
