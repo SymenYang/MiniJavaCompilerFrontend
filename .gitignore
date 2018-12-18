@@ -1,3 +1,5 @@
 .vscode/
 .DS_Store
 .antlr/
+*.pyc
+__pycache__/

@@ -90,7 +90,7 @@ mainClass
 classDeclaration
 varDeclaration
 methodDeclaration
-type
+atype
 expression
 expression2
 statement

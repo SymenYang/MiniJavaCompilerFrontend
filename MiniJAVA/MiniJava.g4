@@ -6,11 +6,11 @@ mainClass : 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' 
 
 classDeclaration: 'class' Identifier ( 'extends' Identifier )? '{' ( varDeclaration )* ( methodDeclaration )* '}' ;
 
-varDeclaration: type Identifier ';';
+varDeclaration: atype Identifier ';';
 
-methodDeclaration: 'public' type Identifier '(' ( type Identifier ( ',' type Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}' ;
+methodDeclaration: 'public' atype Identifier '(' ( atype Identifier ( ',' atype Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}' ;
 
-type: 'int' '[' ']' #INTARRAY
+atype: 'int' '[' ']' #INTARRAY
 |   'boolean' #BOOL
 |   'int' #INT
 |   Identifier #ID
