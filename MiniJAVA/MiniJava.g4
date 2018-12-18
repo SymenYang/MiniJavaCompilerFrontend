@@ -54,7 +54,7 @@ statement : '{' ( statement )* '}'
 |   Identifier '=' expression ';'
 |   Identifier '[' expression ']' '=' expression ';';
 
-IntergerLiteral : [+-]?[1-9][0-9]*;
+IntergerLiteral : ([1-9][0-9]*|[0]);
 
 Identifier : [a-zA-Z_] [a-zA-Z0-9_]*;
 
