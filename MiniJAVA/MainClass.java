@@ -35,5 +35,14 @@ public class MainClass {
 
         // show tree
         Trees.inspect(tree, parser);
+
+        // listener test
+        ParseTreeWalker walker = new ParseTreeWalker();
+        MiniJavaCustomListener listener = new MiniJavaCustomListener();
+        walker.walk(listener,tree);
+
+        // visitor test
+        MiniJavaBaseVisitor visitor = new MiniJavaBaseVisitor<>();
+        visitor.visit(tree);
     }
 }
