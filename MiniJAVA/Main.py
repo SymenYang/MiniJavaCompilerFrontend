@@ -6,6 +6,8 @@ from MiniJavaLexer    import MiniJavaLexer
 from MiniJavaListener import MiniJavaListener
 from MiniJavaParser   import MiniJavaParser  
 from MiniJavaVisitor   import MiniJavaVisitor  
+from ClassGetVisitor import ClassGetVisitor
+from TypeCheckVisitor import TypeCheckVisitor
 
 def mainFunc(argv):
     input = FileStream(argv[1])
@@ -13,8 +15,11 @@ def mainFunc(argv):
     stream = CommonTokenStream(lexer)
     parser = MiniJavaParser(stream)
     tree = parser.goal()
-    v = MiniJavaVisitor()
+    v = ClassGetVisitor()#MiniJavaVisitor()
     print(v.visit(tree))
+    print(v.ClassTable)
+    print(v.FuncTable)
+    TypeChecker = TypeCheckVisitor(v.ClassTable,v.FuncTable)
 
 if __name__ == '__main__':
     mainFunc(sys.argv)

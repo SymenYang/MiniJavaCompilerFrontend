@@ -45,7 +45,7 @@ expression: 'true' expression2 #TRUE
 expression2: '[' expression ']' expression2 #SQUAREBRACKET
 |   '.' 'length' expression2 #LENGTH
 |   '.' Identifier '(' ( expression ( ',' expression )* )? ')' expression2 #FUNCTION
-|   ( And | Less | Mul | Min | Add ) expression #BIOP
+|   op=( '&&' | '<' | '*' | '-' | '+' ) expression #BIOP
 |   #NULL
     ;
 

@@ -1256,21 +1256,12 @@ class MiniJavaParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.Expression2Context
             super().__init__(parser)
+            self.op = None # Token
             self.copyFrom(ctx)
 
         def expression(self):
             return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
 
-        def And(self):
-            return self.getToken(MiniJavaParser.And, 0)
-        def Less(self):
-            return self.getToken(MiniJavaParser.Less, 0)
-        def Mul(self):
-            return self.getToken(MiniJavaParser.Mul, 0)
-        def Min(self):
-            return self.getToken(MiniJavaParser.Min, 0)
-        def Add(self):
-            return self.getToken(MiniJavaParser.Add, 0)
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBIOP" ):
@@ -1393,9 +1384,10 @@ class MiniJavaParser ( Parser ):
                 localctx = MiniJavaParser.BIOPContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
                 self.state = 168
+                localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.And) | (1 << MiniJavaParser.Mul) | (1 << MiniJavaParser.Less) | (1 << MiniJavaParser.Add) | (1 << MiniJavaParser.Min))) != 0)):
-                    self._errHandler.recoverInline(self)
+                    localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
