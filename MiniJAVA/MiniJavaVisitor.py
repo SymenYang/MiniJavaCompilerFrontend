@@ -54,13 +54,8 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#TRUE.
-    def visitTRUE(self, ctx:MiniJavaParser.TRUEContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#FALSE.
-    def visitFALSE(self, ctx:MiniJavaParser.FALSEContext):
+    # Visit a parse tree produced by MiniJavaParser#TRUEFALSE.
+    def visitTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
         return self.visitChildren(ctx)
 
 

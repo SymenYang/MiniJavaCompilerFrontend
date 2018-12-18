@@ -89,21 +89,12 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#TRUE.
-    def enterTRUE(self, ctx:MiniJavaParser.TRUEContext):
+    # Enter a parse tree produced by MiniJavaParser#TRUEFALSE.
+    def enterTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#TRUE.
-    def exitTRUE(self, ctx:MiniJavaParser.TRUEContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#FALSE.
-    def enterFALSE(self, ctx:MiniJavaParser.FALSEContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#FALSE.
-    def exitFALSE(self, ctx:MiniJavaParser.FALSEContext):
+    # Exit a parse tree produced by MiniJavaParser#TRUEFALSE.
+    def exitTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
         pass
 
 

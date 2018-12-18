@@ -32,8 +32,7 @@ atype: 'int' '[' ']' #INTARRAY
 //|   '!' expression
 //|   '(' expression ')' ;
 
-expression: 'true' expression2 #TRUE
-|   'false' expression2 #FALSE
+expression: BOOL=('true'|'false') expression2 #TRUEFALSE
 |   IntergerLiteral expression2 #INTLIT
 |   Identifier expression2 #VAR
 |   'this' expression2 #THIS

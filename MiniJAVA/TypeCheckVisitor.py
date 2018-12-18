@@ -16,150 +16,202 @@ class TypeCheckVisitor(MiniJavaVisitor):
             if not self.FuncTypes[item] in self.Types:
                 print('方法返回类型错误,方法：' + item[0] + '.' + item[1] + ' 得到未知类型：' + self.FuncTypes[item])
                 self.BigWrong = True
-        # Expression2 return (OP String,Type0,Type1...)
+        # Expression2 return (OP String,[SubOP String]*,Type0,Type1...)
         # Expression return type
 
+        self.ClassVars = {}
+        self.MethodVars = {}
+        self.ClassFlag = False
 
-    def visitTRUE(self, ctx:MiniJavaParser.TRUEContext):
+    def visitClassDeclaration(self, ctx:MiniJavaParser.ClassDeclarationContext):
         if self.BigWrong:
             return None
-        reType = self.visit( ctx.expression2(0) )
+        self.ClassVars = {}
+        self.MethodVars = {}
+        self.ClassFlag = True
+        super(TypeCheckVisitor,self).visitClassDeclaration(ctx)
+
+    def visitMethodDeclaration(self, ctx:MiniJavaParser.MethodDeclarationContext):
+        if self.BigWrong:
+            return None
+        self.ClassFlag = False
+        self.MethodVars = {}
+        super(TypeCheckVisitor,self).visitClassDeclaration(ctx)
+
+    def visitVarDeclaration(self, ctx:MiniJavaParser.VarDeclarationContext):
+        if self.BigWrong:
+            return None
+        typeStr = self.visit(ctx.atype())
+        varName = str(ctx.Identifier())
+        if not (typeStr in self.Types):
+            print('变量类型错误, ' + varName + ' 指定为未定义类型 ' + typeStr + ' ' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
+            return
+        if self.ClassFlag:
+            self.ClassVars[varName] = typeStr
+        else:
+            self.MethodVars[varName] = typeStr
+
+    # Expr
+    def visitTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
+        if self.BigWrong:
+            return None
+        reType = self.visit( ctx.expression2() )
         if reType == None:
             return reType
         if reType[0] != 'BIOP' and reType[0] != 'NULL':
-            self.BigWrong = True
-            print('错误用法，\'true\'后接非法操作')
-        if reType[1]
-
-
-    # Visit a parse tree produced by MiniJavaParser#FALSE.
-    def visitFALSE(self, ctx:MiniJavaParser.FALSEContext):
-        if self.BigWrong:
+            print('错误用法，Bool常量后接非法操作' + ctx.expression2().getSymbol().line + ':' + ctx.expression2().getSymbol().column)
             return None
-        return self.visitChildren(ctx)
+        if reType[0] == 'BIOP':
+            if reType[1] != 'And':
+                print('错误用法，Bool常量后接非法操作'+ ctx.expression2().getSymbol().line + ':' + ctx.expression2().getSymbol().column)
+                return None
+        return 'BOOL'
 
-
-    # Visit a parse tree produced by MiniJavaParser#INTLIT.
+    # Expr
     def visitINTLIT(self, ctx:MiniJavaParser.INTLITContext):
         if self.BigWrong:
             return None
-        return self.visitChildren(ctx)
+        reType = self.visit( ctx.expression2() )
+        if reType == None:
+            return reType
+        if reType[0] != 'BIOP' and reType[0] != 'NULL':
+            print('错误用法，Int常量后接非法操作' + ctx.expression2().getSymbol().line + ':' + ctx.expression2().getSymbol().column)
+            return None 
+        if reType[0] == 'BIOP':
+            if reType[1] == 'And':
+                print('错误用法，Int常量后接非法操作' + ctx.expression2().getSymbol().line + ':' + ctx.expression2().getSymbol().column)
+                return None
+            if reType[1] == 'Less':
+                return 'BOOL'
+        return 'INT'
 
 
-    # Visit a parse tree produced by MiniJavaParser#VAR.
+    # Expr
     def visitVAR(self, ctx:MiniJavaParser.VARContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#THIS.
+    # Expr
     def visitTHIS(self, ctx:MiniJavaParser.THISContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#NEWINT.
+    # Expr
     def visitNEWINT(self, ctx:MiniJavaParser.NEWINTContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#NEWID.
+    # Expr
     def visitNEWID(self, ctx:MiniJavaParser.NEWIDContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#NOT.
+    # Expr
     def visitNOT(self, ctx:MiniJavaParser.NOTContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#BRACKET.
+    # Expr
     def visitBRACKET(self, ctx:MiniJavaParser.BRACKETContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#SQUAREBRACKET.
+    # Expr2
     def visitSQUAREBRACKET(self, ctx:MiniJavaParser.SQUAREBRACKETContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#LENGTH.
+    # Expr2
     def visitLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#FUNCTION.
+    # Expr2
     def visitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#BIOP.
+    # Expr2
     def visitBIOP(self, ctx:MiniJavaParser.BIOPContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#NULL.
+    # Expr2
     def visitNULL(self, ctx:MiniJavaParser.NULLContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#CURLYBRACKET.
+    # Stat
     def visitCURLYBRACKET(self, ctx:MiniJavaParser.CURLYBRACKETContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#IFELSE.
+    # Stat
     def visitIFELSE(self, ctx:MiniJavaParser.IFELSEContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#WHILE.
+    # Stat
     def visitWHILE(self, ctx:MiniJavaParser.WHILEContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#PRINT.
+    # Stat
     def visitPRINT(self, ctx:MiniJavaParser.PRINTContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#ASSIGN.
+    # Stat
     def visitASSIGN(self, ctx:MiniJavaParser.ASSIGNContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#ARRAYASSIGN.
+    # Stat
     def visitARRAYASSIGN(self, ctx:MiniJavaParser.ARRAYASSIGNContext):
         if self.BigWrong:
             return None
         return self.visitChildren(ctx)
+
+    def visitINTARRAY(self,ctx:MiniJavaParser.INTARRAYContext):
+        return 'INTARR'
+    
+    def visitBOOL(self, ctx:MiniJavaParser.BOOLContext):
+        return 'BOOL'
+
+    def visitINT(self, ctx:MiniJavaParser.INTContext):
+        return 'INT'
+
+    def visitID(self, ctx:MiniJavaParser.IDContext):
+        return str(ctx.Identifier())

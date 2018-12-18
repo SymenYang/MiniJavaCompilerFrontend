@@ -16,10 +16,9 @@ def mainFunc(argv):
     parser = MiniJavaParser(stream)
     tree = parser.goal()
     v = ClassGetVisitor()#MiniJavaVisitor()
-    print(v.visit(tree))
-    print(v.ClassTable)
-    print(v.FuncTable)
+    v.visit(tree)
     TypeChecker = TypeCheckVisitor(v.ClassTable,v.FuncTable)
+    TypeChecker.visit(tree)
 
 if __name__ == '__main__':
     mainFunc(sys.argv)
