@@ -39,7 +39,18 @@ class TypeCheckVisitor(MiniJavaVisitor):
         Ids = [str(item) for item in ctx.Identifier()[1:]]
         for i in range(len(Ids)):
             self.methodVars[Ids[i]] = atypes[i]
-        super(TypeCheckVisitor,self).visitMethodDeclaration(ctx)
+        
+        for item in ctx.varDeclaration():
+            self.visit(item)
+        for item in ctx.statement():
+            self.visit(item)
+        retType = self.visit(ctx.atype(0))
+        retValueType = self.visit(ctx.expression())
+        if retValueType == 'None':
+            return 'None'
+        elif retValueType != retType:
+            print('函数返回值类型不匹配')
+            return 'None'
         return
 
     def visitVarDeclaration(self, ctx:MiniJavaParser.VarDeclarationContext):
