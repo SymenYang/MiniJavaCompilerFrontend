@@ -950,6 +950,7 @@ class MiniJavaParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
             super().__init__(parser)
+            self.op = None # Token
             self.copyFrom(ctx)
 
         def expression(self, i:int=None):
@@ -1025,6 +1026,7 @@ class MiniJavaParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
             super().__init__(parser)
+            self.BOOL = None # Token
             self.copyFrom(ctx)
 
 
@@ -1117,9 +1119,10 @@ class MiniJavaParser ( Parser ):
                 _prevctx = localctx
 
                 self.state = 111
+                localctx.BOOL = self._input.LT(1)
                 _la = self._input.LA(1)
                 if not(_la==MiniJavaParser.T__20 or _la==MiniJavaParser.T__21):
-                    self._errHandler.recoverInline(self)
+                    localctx.BOOL = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
@@ -1222,9 +1225,10 @@ class MiniJavaParser ( Parser ):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
                         self.state = 134
+                        localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.And) | (1 << MiniJavaParser.Mul) | (1 << MiniJavaParser.Less) | (1 << MiniJavaParser.Add) | (1 << MiniJavaParser.Min))) != 0)):
-                            self._errHandler.recoverInline(self)
+                            localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()

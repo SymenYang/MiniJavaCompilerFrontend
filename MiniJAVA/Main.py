@@ -32,8 +32,8 @@ def mainFunc(argv):
     #if GrammarChecker.HasError:
     #    return
     #print('Countinue')
-    #TypeChecker = TypeCheckVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
-    #TypeChecker.visit(tree)
+    TypeChecker = TypeCheckVisitor(v.ClassTable,ClassParam.Classes)
+    TypeChecker.visit(tree)
 
 if __name__ == '__main__':
     mainFunc(sys.argv)

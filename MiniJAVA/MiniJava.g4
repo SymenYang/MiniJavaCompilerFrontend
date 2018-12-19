@@ -20,8 +20,8 @@ atype: 'int' '[' ']' #INTARRAY
 expression:    expression '[' expression ']' # ARRAYSEARCH
 |   expression '.' 'length' # LENGTH
 |   expression '.' Identifier '(' ( expression ( ',' expression )* )? ')' # FUNCTION
-|   expression ( '&&' | '<' | '+' | '-' | '*' ) expression # BIOP
-|   ('true' | 'false') # BOOLLIT
+|   expression op=( '&&' | '<' | '+' | '-' | '*' ) expression # BIOP
+|   BOOL = ('true' | 'false') # BOOLLIT
 |   IntergerLiteral # INTLIT
 |   Identifier # VAR
 |   'this' # THIS
