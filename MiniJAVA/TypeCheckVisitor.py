@@ -284,7 +284,9 @@ class TypeCheckVisitor(MiniJavaVisitor):
     # Visit a parse tree produced by MiniJavaParser#IFELSE.
     def visitIFELSE(self, ctx:MiniJavaParser.IFELSEContext):
         reType = self.visit(ctx.expression())
-        if reType != 'BOOL':
+        if reType == 'None':
+            pass
+        elif reType != 'BOOL':
             # if()中使用非bool值
             print('if()中使用非bool值')
         self.visit(ctx.statement(0))
@@ -305,6 +307,8 @@ class TypeCheckVisitor(MiniJavaVisitor):
     # Visit a parse tree produced by MiniJavaParser#PRINT.
     def visitPRINT(self, ctx:MiniJavaParser.PRINTContext):
         reType = self.visit(ctx.expression())
+        if reType == 'None':
+            return 'None'
         if reType != 'INT':
             # println()中使用非int值
             print('println()中使用非int值')
