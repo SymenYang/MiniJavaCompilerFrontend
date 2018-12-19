@@ -17,11 +17,11 @@ class ClassParam:
         while (parent != 'None'):
             for func in FuncTable:
                 if func[0] == parent:
-                    self.Funcs[(func[1],func[2])] = FuncTable[func]
+                    self.Funcs[(func[1],func[2])] = [parent] + FuncTable[func]
             parent = ParentTable[parent]
         for func in FuncTable:
             if func[0] == ClassName:
-                self.Funcs[(func[1],func[2])] = FuncTable[func]
+                self.Funcs[(func[1],func[2])] = [ClassName] + FuncTable[func]
 
     def extractVars(self,Classes,ParentTable):
         if not self.name in ParentTable:

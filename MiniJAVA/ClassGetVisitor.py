@@ -31,7 +31,7 @@ class ClassGetVisitor(MiniJavaVisitor):
         print('visited method, name:',self.nowClass,str(ctx.Identifier()[0]),'type:',typeStr)
         IDs = ctx.Identifier()[1:]
         typeList = [typeStr]
-        nameID = typeStr
+        nameID = ''
         for i in range(len(IDs)):
             typeList.append((str(IDs[i]),self.visit(ctx.atype(i + 1))))
             nameID +=self.visit(ctx.atype(i + 1))
