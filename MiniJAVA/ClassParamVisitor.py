@@ -4,6 +4,10 @@ from MiniJavaParser import MiniJavaParser
 
 class ClassParam:
     def __init__(self,FuncTable,ParentTable,ClassName):
+        '''
+        self.Funcs type: {(funcName,funcStr):[returnType,(param name,param type)* ]}
+        self.Vars type: { varName : varType}
+        '''
         self.Funcs = {}
         self.Vars = {} 
         self.name = ClassName
@@ -62,7 +66,6 @@ class ClassParamVisitor(MiniJavaVisitor):
     
     def visitVarDeclaration(self,ctx:MiniJavaParser.VarDeclarationContext):
         typeStr = self.visit(ctx.atype())
-        print(typeStr)
         varName = str(ctx.Identifier())
         if self.nowClass != '':
             self.Classes[self.nowClass].Vars[varName] = typeStr

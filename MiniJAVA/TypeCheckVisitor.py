@@ -3,7 +3,7 @@ from MiniJavaVisitor   import MiniJavaVisitor
 from MiniJavaParser import MiniJavaParser
 
 class TypeCheckVisitor(MiniJavaVisitor):
-    def __init__(self,ClassTable,FuncTable,ParentTable):
+    def __init__(self,ClassTable,FuncTable,ParentTable,ClassParamTable):
         super(TypeCheckVisitor,self).__init__()
         self.Types = ClassTable
         self.Types['INTARR'] = 'type'
@@ -20,6 +20,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
                 if not param[1] in self.Types:
                     print('方法参数类型错误,方法：' + item[0] + '.' + item[1] + '参数： ' + param[0] + ' 得到未知类型：' + param[1])
                     self.BigWrong = True
+        self.ClassParamTable = ClassParamTable
         # Expression2 return (OP String,[SubOP String]*,Type0,Type1...)
         # Expression return type
 
@@ -30,8 +31,11 @@ class TypeCheckVisitor(MiniJavaVisitor):
     def visitClassDeclaration(self, ctx:MiniJavaParser.ClassDeclarationContext):
         if self.BigWrong:
             return None
-        self.ClassVars = {}
+        # 从之前的到的class param获得var列表
+        self.ClassVars = self.ClassParamTable[str(ctx.Identifier(0))]
+        # 初始化方法变量
         self.MethodVars = {}
+        # 设置flag不更新变量到方法变量表
         self.ClassFlag = True
         super(TypeCheckVisitor,self).visitClassDeclaration(ctx)
 
@@ -39,6 +43,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         if self.BigWrong:
             return None
         self.ClassFlag = False
+        # 重置方法变量表
         self.MethodVars = {}
         super(TypeCheckVisitor,self).visitClassDeclaration(ctx)
 
@@ -51,7 +56,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             print('变量类型错误, ' + varName + ' 指定为未定义类型 ' + typeStr + ' ' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             return
         if self.ClassFlag:
-            self.ClassVars[varName] = typeStr
+            pass
         else:
             self.MethodVars[varName] = typeStr
 
@@ -98,7 +103,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         reType = self.visit(ctx.expression2())
         if reType == None:
             return None
-        #变量不存在
+        #变量没有定义过
         if not (ID in self.ClassVars or ID in self.MethodVars):
             print('使用未定义变量:' + ID  + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             return None
@@ -110,7 +115,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         TypeKind = self.Types[Type]
         #如果变量是个class,检查方法存不存在
         if TypeKind == 'Class' or TypeKind == 'MainClass':
-            # 类只能接 .functino()
+            # 类只能接 .function()
             if reType[0] == 'FUNCTION':
                 funcName = reType[1]
                 # TODO 还要写参数的类别识别，需要更改table
