@@ -7,6 +7,7 @@ from MiniJavaListener import MiniJavaListener
 from MiniJavaParser   import MiniJavaParser  
 from MiniJavaVisitor   import MiniJavaVisitor  
 from ClassGetVisitor import ClassGetVisitor
+from ClassParamVisitor import ClassParamVisitor
 from TypeCheckVisitor import TypeCheckVisitor
 
 def mainFunc(argv):
@@ -17,9 +18,13 @@ def mainFunc(argv):
     tree = parser.goal()
     v = ClassGetVisitor()#MiniJavaVisitor()
     v.visit(tree)
-    print(v.parentTable)
-    print(v.FuncTable)
-    #TypeChecker = TypeCheckVisitor(v.ClassTable,v.FuncTable)
+    print(v.ParentTable)
+    #print(v.FuncTable)
+    ClassParam = ClassParamVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
+    ClassParam.visit(tree)
+    for c in ClassParam.Classes:
+        print(ClassParam.Classes[c])
+    #TypeChecker = TypeCheckVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
     #TypeChecker.visit(tree)
 
 if __name__ == '__main__':

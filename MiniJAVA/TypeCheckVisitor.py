@@ -3,7 +3,7 @@ from MiniJavaVisitor   import MiniJavaVisitor
 from MiniJavaParser import MiniJavaParser
 
 class TypeCheckVisitor(MiniJavaVisitor):
-    def __init__(self,ClassTable,FuncTable):
+    def __init__(self,ClassTable,FuncTable,ParentTable):
         super(TypeCheckVisitor,self).__init__()
         self.Types = ClassTable
         self.Types['INTARR'] = 'type'
@@ -13,9 +13,13 @@ class TypeCheckVisitor(MiniJavaVisitor):
         self.FuncTypes = FuncTable
         self.BigWrong = False
         for item in self.FuncTypes:
-            if not self.FuncTypes[item] in self.Types:
-                print('方法返回类型错误,方法：' + item[0] + '.' + item[1] + ' 得到未知类型：' + self.FuncTypes[item])
+            if not self.FuncTypes[item][0] in self.Types:
+                print('方法返回类型错误,方法：' + item[0] + '.' + item[1] + ' 得到未知类型：' + self.FuncTypes[item][0])
                 self.BigWrong = True
+            for param in self.FuncTypes[item][1:]:
+                if not param[1] in self.Types:
+                    print('方法参数类型错误,方法：' + item[0] + '.' + item[1] + '参数： ' + param[0] + ' 得到未知类型：' + param[1])
+                    self.BigWrong = True
         # Expression2 return (OP String,[SubOP String]*,Type0,Type1...)
         # Expression return type
 
