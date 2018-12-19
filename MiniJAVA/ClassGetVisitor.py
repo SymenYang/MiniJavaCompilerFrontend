@@ -11,13 +11,13 @@ class ClassGetVisitor(MiniJavaVisitor):
         self.nowClass = ''
 
     def visitMainClass(self, ctx:MiniJavaParser.MainClassContext):
-        print('visited main class, name:',str(ctx.Identifier()[0]))
+        #print('visited main class, name:',str(ctx.Identifier()[0]))
         self.ClassTable[str(ctx.Identifier()[0])] = 'MainClass'
         self.nowClass = str(ctx.Identifier()[0])
         super(ClassGetVisitor,self).visitMainClass(ctx)
     
     def visitClassDeclaration(self, ctx:MiniJavaParser.ClassDeclarationContext):
-        print('visited class, name:',str(ctx.Identifier()[0]))
+        #print('visited class, name:',str(ctx.Identifier()[0]))
         self.nowClass = str(ctx.Identifier()[0])
         parent = 'None'
         if len(ctx.Identifier()) > 1:
@@ -28,13 +28,14 @@ class ClassGetVisitor(MiniJavaVisitor):
     
     def visitMethodDeclaration(self, ctx:MiniJavaParser.MethodDeclarationContext):
         typeStr = self.visit(ctx.atype(0))
-        print('visited method, name:',self.nowClass,str(ctx.Identifier()[0]),'type:',typeStr)
+        #print('visited method, name:',self.nowClass,str(ctx.Identifier()[0]),'type:',typeStr)
         IDs = ctx.Identifier()[1:]
         typeList = [typeStr]
-        nameID = ''
+        nameID = []
         for i in range(len(IDs)):
             typeList.append((str(IDs[i]),self.visit(ctx.atype(i + 1))))
-            nameID +=self.visit(ctx.atype(i + 1))
+            nameID.append(self.visit(ctx.atype(i + 1)))
+        nameID = tuple(nameID)
         self.FuncTable[(self.nowClass,str(ctx.Identifier()[0]),nameID)] = typeList
     
     def visitINTARRAY(self,ctx:MiniJavaParser.INTARRAYContext):

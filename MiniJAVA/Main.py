@@ -19,12 +19,12 @@ def mainFunc(argv):
     tree = parser.goal()
     v = ClassGetVisitor()#MiniJavaVisitor()
     v.visit(tree)
-    print(v.ParentTable)
+    #print(v.ParentTable)
     #print(v.FuncTable)
     ClassParam = ClassParamVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
     ClassParam.visit(tree)
-    for c in ClassParam.Classes:
-        print(ClassParam.Classes[c])
+    #or c in ClassParam.Classes:
+    #    print(ClassParam.Classes[c])
     if ClassParam.HasError:
         return
     #GrammarChecker = GrammarCheckVisitor()

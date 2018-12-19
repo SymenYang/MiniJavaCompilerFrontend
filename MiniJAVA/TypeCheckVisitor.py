@@ -214,6 +214,37 @@ class TypeCheckVisitor(MiniJavaVisitor):
     def visitINTLIT(self, ctx:MiniJavaParser.INTLITContext):
         return 'INT'
 
+    def checkFunctions(self,funcID,classParam):
+        funcName = funcID[0]
+        for item in classParam.Funcs:
+            if item[0] == funcName:
+                paramTuple = item[1]
+                funcTuple = funcID[1]
+                if len(paramTuple) != len(funcTuple):
+                    continue
+                sameFlag = True
+                for i in range(len(paramTuple)):
+                    if paramTuple[i] == funcTuple[i]:
+                        # 对应类型相等
+                        continue
+                    elif funcTuple[i] in self.ClassNames:
+                        # 对应类型是一个类
+                        if paramTuple[i] in self.ClassParam[funcTuple[i]].Parents:
+                            # 模版函数该参数类型是调用参数的父类
+                            continue
+                        else:
+                            # 模版函数该参数类型不是调用参数的父类
+                            sameFlag = False
+                            break
+                    else:
+                        # 不对应且不是一个类
+                        sameFlag = False
+                        break
+                if sameFlag:
+                    return classParam.Funcs[item][1]
+            else:
+                continue
+        return 'None'
 
     # Visit a parse tree produced by MiniJavaParser#FUNCTION.
     def visitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
@@ -232,14 +263,16 @@ class TypeCheckVisitor(MiniJavaVisitor):
         if 'None' in reTypes:
             return 'None'
 
-        funcCite = ''
+        funcCite = []
         for item in reTypes:
-            funcCite += item
+            funcCite.append(item)
+        funcCite = tuple(funcCite)
         
         classParam = self.ClassParam[varType]
         funcID = (funcName,funcCite)
-        if funcID in classParam.Funcs:
-            return classParam.Funcs[funcID][1]
+        funcCheck = self.checkFunctions(funcID,classParam)
+        if funcCheck != 'None':
+            return funcCheck
         else:
             print(funcID,varType)
             # 使用未定义函数

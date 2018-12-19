@@ -10,11 +10,18 @@ class ClassParam:
         '''
         self.Funcs = {}
         self.Vars = {} 
+        self.Parents = []
         self.name = ClassName
+        self.HasError = False
         if not ClassName in ParentTable:
             return
         parent = ParentTable[ClassName]
         while (parent != 'None'):
+            if not parent in ClassName:
+                print(self.name + '类，继承自未定义类：' + parent)
+                self.HasError = True
+                return
+            self.Parents.append(parent)
             for func in FuncTable:
                 if func[0] == parent:
                     self.Funcs[(func[1],func[2])] = [parent] + FuncTable[func]
@@ -38,7 +45,7 @@ class ClassParam:
 
     # debug use
     def __str__(self):
-        return self.name + ':\n' + self.Funcs.__str__() + '\n' + self.Vars.__str__()
+        return self.name + ':\n' + self.Funcs.__str__() + '\n' + self.Vars.__str__() + '\n' + self.Parents.__str__()
 
 class ClassParamVisitor(MiniJavaVisitor):
     def __init__(self,ClassTable,FuncTable,ParentTable):
@@ -47,16 +54,19 @@ class ClassParamVisitor(MiniJavaVisitor):
         self.Types['INT'] = 'type'
         self.Types['INTARRAY'] = 'type'
         self.Types['BOOL'] = 'type'
-        print(ClassTable)
         self.Classes = {}
         self.ParentTable = ParentTable
         for className in ClassTable:
             self.Classes[className] = ClassParam(FuncTable,ParentTable,className)
-        
+            if self.Classes[className].HasError:
+                self.HasError = True
+                return
         self.nowClass = ''
         self.HasError = False
     
     def visitGoal(self,ctx:MiniJavaParser.GoalContext):
+        if self.HasError:
+            return
         super(ClassParamVisitor,self).visitGoal(ctx)
         for item in self.Classes:
             self.Classes[item].extractVars(self.Classes,self.ParentTable)
@@ -92,7 +102,7 @@ class ClassParamVisitor(MiniJavaVisitor):
 
     # return type string
     def visitINTARRAY(self,ctx:MiniJavaParser.INTARRAYContext):
-        return 'INTARR'
+        return 'INTARRAY'
     
     def visitBOOL(self, ctx:MiniJavaParser.BOOLContext):
         return 'BOOL'
