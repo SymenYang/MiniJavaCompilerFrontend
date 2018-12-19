@@ -9,7 +9,7 @@ from MiniJavaVisitor   import MiniJavaVisitor
 from ClassGetVisitor import ClassGetVisitor
 from ClassParamVisitor import ClassParamVisitor
 #from GrammarCheckVisitor import GrammarCheckVisitor
-#from TypeCheckVisitor import TypeCheckVisitor
+from TypeCheckVisitor import TypeCheckVisitor
 
 def mainFunc(argv):
     input = FileStream(argv[1])
