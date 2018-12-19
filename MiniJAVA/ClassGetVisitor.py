@@ -6,6 +6,7 @@ class ClassGetVisitor(MiniJavaVisitor):
     def __init__(self):
         super(ClassGetVisitor,self).__init__()
         self.ClassTable = {}
+        self.parentTable = {}
         self.FuncTable = {}
         self.nowClass = ''
 
@@ -17,14 +18,22 @@ class ClassGetVisitor(MiniJavaVisitor):
     
     def visitClassDeclaration(self, ctx:MiniJavaParser.ClassDeclarationContext):
         print('visited class, name:',str(ctx.Identifier()[0]))
-        self.ClassTable[str(ctx.Identifier()[0])] = 'Class'
         self.nowClass = str(ctx.Identifier()[0])
+        parent = 'None'
+        if len(ctx.Identifier()) > 1:
+            parent = str(ctx.Identifier()[1])
+        self.ClassTable[str(ctx.Identifier()[0])] = 'Class'
+        self.parentTable[str(ctx.Identifier()[0])] = parent
         super(ClassGetVisitor,self).visitClassDeclaration(ctx)
     
     def visitMethodDeclaration(self, ctx:MiniJavaParser.MethodDeclarationContext):
         typeStr = self.visit(ctx.atype(0))
         print('visited method, name:',self.nowClass,str(ctx.Identifier()[0]),'type:',typeStr)
-        self.FuncTable[(self.nowClass,str(ctx.Identifier()[0]))] = typeStr
+        IDs = ctx.Identifier()[1:]
+        typeList = [typeStr]
+        for i in range(len(IDs)):
+            typeList.append((str(IDs[i]),self.visit(ctx.atype(i))))
+        self.FuncTable[(self.nowClass,str(ctx.Identifier()[0]))] = typeList
     
     def visitINTARRAY(self,ctx:MiniJavaParser.INTARRAYContext):
         return 'INTARR'

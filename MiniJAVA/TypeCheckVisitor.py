@@ -90,6 +90,30 @@ class TypeCheckVisitor(MiniJavaVisitor):
     def visitVAR(self, ctx:MiniJavaParser.VARContext):
         if self.BigWrong:
             return None
+        ID = ctx.Identifier()
+        reType = self.visit(ctx.expression2())
+        if reType == None:
+            return None
+        #变量不存在
+        if not (ID in self.ClassVars or ID in self.MethodVars):
+            print('使用未定义变量:' + ID  + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
+            return None
+        Type = ''
+        if ID in self.ClassVars:
+            Type = self.ClassVars[ID]
+        else:
+            Type = self.MethodVars[ID]
+        TypeKind = self.Types[Type]
+        #如果变量是个class,检查方法存不存在
+        if TypeKind == 'Class' or TypeKind == 'MainClass':
+            # 类只能接 .functino()
+            if reType[0] == 'FUNCTION':
+                funcName = reType[1]
+                # TODO 还要写参数的类别识别，需要更改table
+            else:
+                print('类 ' + ID + '使用非法操作' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
+                return None
+        # 如果变量是个Type，检查后接expression2合法与否
         return self.visitChildren(ctx)
 
 
