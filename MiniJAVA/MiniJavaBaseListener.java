@@ -123,25 +123,13 @@ public class MiniJavaBaseListener implements MiniJavaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTRUE(MiniJavaParser.TRUEContext ctx) { }
+	@Override public void enterTRUEFALSE(MiniJavaParser.TRUEFALSEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTRUE(MiniJavaParser.TRUEContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFALSE(MiniJavaParser.FALSEContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFALSE(MiniJavaParser.FALSEContext ctx) { }
+	@Override public void exitTRUEFALSE(MiniJavaParser.TRUEFALSEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

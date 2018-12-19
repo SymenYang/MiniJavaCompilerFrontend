@@ -25,6 +25,8 @@ def mainFunc(argv):
     ClassParam.visit(tree)
     for c in ClassParam.Classes:
         print(ClassParam.Classes[c])
+    if ClassParam.HasError:
+        return
     GrammarChecker = GrammarCheckVisitor()
     GrammarChecker.visit(tree)
     if GrammarChecker.HasError:

@@ -41,46 +41,39 @@ public interface MiniJavaVisitor<T> extends ParseTreeVisitor<T> {
 	T visitMethodDeclaration(MiniJavaParser.MethodDeclarationContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code INTARRAY}
-	 * labeled alternative in {@link MiniJavaParser#type}.
+	 * labeled alternative in {@link MiniJavaParser#atype}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitINTARRAY(MiniJavaParser.INTARRAYContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code BOOL}
-	 * labeled alternative in {@link MiniJavaParser#type}.
+	 * labeled alternative in {@link MiniJavaParser#atype}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitBOOL(MiniJavaParser.BOOLContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code INT}
-	 * labeled alternative in {@link MiniJavaParser#type}.
+	 * labeled alternative in {@link MiniJavaParser#atype}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitINT(MiniJavaParser.INTContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ID}
-	 * labeled alternative in {@link MiniJavaParser#type}.
+	 * labeled alternative in {@link MiniJavaParser#atype}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitID(MiniJavaParser.IDContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code TRUE}
+	 * Visit a parse tree produced by the {@code TRUEFALSE}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTRUE(MiniJavaParser.TRUEContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code FALSE}
-	 * labeled alternative in {@link MiniJavaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFALSE(MiniJavaParser.FALSEContext ctx);
+	T visitTRUEFALSE(MiniJavaParser.TRUEFALSEContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code INTLIT}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
