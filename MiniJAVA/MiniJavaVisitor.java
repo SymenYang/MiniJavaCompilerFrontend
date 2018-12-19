@@ -68,33 +68,12 @@ public interface MiniJavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitID(MiniJavaParser.IDContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code TRUEFALSE}
+	 * Visit a parse tree produced by the {@code NEWID}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTRUEFALSE(MiniJavaParser.TRUEFALSEContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code INTLIT}
-	 * labeled alternative in {@link MiniJavaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitINTLIT(MiniJavaParser.INTLITContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code VAR}
-	 * labeled alternative in {@link MiniJavaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVAR(MiniJavaParser.VARContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code THIS}
-	 * labeled alternative in {@link MiniJavaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTHIS(MiniJavaParser.THISContext ctx);
+	T visitNEWID(MiniJavaParser.NEWIDContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code NEWINT}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
@@ -102,13 +81,6 @@ public interface MiniJavaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNEWINT(MiniJavaParser.NEWINTContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code NEWID}
-	 * labeled alternative in {@link MiniJavaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNEWID(MiniJavaParser.NEWIDContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code NOT}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
@@ -124,40 +96,61 @@ public interface MiniJavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBRACKET(MiniJavaParser.BRACKETContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code SQUAREBRACKET}
-	 * labeled alternative in {@link MiniJavaParser#expression2}.
+	 * Visit a parse tree produced by the {@code VAR}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSQUAREBRACKET(MiniJavaParser.SQUAREBRACKETContext ctx);
+	T visitVAR(MiniJavaParser.VARContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code LENGTH}
-	 * labeled alternative in {@link MiniJavaParser#expression2}.
+	 * Visit a parse tree produced by the {@code ARRAYSEARCH}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLENGTH(MiniJavaParser.LENGTHContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code FUNCTION}
-	 * labeled alternative in {@link MiniJavaParser#expression2}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFUNCTION(MiniJavaParser.FUNCTIONContext ctx);
+	T visitARRAYSEARCH(MiniJavaParser.ARRAYSEARCHContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code BIOP}
-	 * labeled alternative in {@link MiniJavaParser#expression2}.
+	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitBIOP(MiniJavaParser.BIOPContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code NULL}
-	 * labeled alternative in {@link MiniJavaParser#expression2}.
+	 * Visit a parse tree produced by the {@code LENGTH}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNULL(MiniJavaParser.NULLContext ctx);
+	T visitLENGTH(MiniJavaParser.LENGTHContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code THIS}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTHIS(MiniJavaParser.THISContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code BOOLLIT}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBOOLLIT(MiniJavaParser.BOOLLITContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code INTLIT}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitINTLIT(MiniJavaParser.INTLITContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code FUNCTION}
+	 * labeled alternative in {@link MiniJavaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFUNCTION(MiniJavaParser.FUNCTIONContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code CURLYBRACKET}
 	 * labeled alternative in {@link MiniJavaParser#statement}.

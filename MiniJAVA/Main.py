@@ -8,8 +8,8 @@ from MiniJavaParser   import MiniJavaParser
 from MiniJavaVisitor   import MiniJavaVisitor  
 from ClassGetVisitor import ClassGetVisitor
 from ClassParamVisitor import ClassParamVisitor
-from GrammarCheckVisitor import GrammarCheckVisitor
-from TypeCheckVisitor import TypeCheckVisitor
+#from GrammarCheckVisitor import GrammarCheckVisitor
+#from TypeCheckVisitor import TypeCheckVisitor
 
 def mainFunc(argv):
     input = FileStream(argv[1])
@@ -27,11 +27,11 @@ def mainFunc(argv):
         print(ClassParam.Classes[c])
     if ClassParam.HasError:
         return
-    GrammarChecker = GrammarCheckVisitor()
-    GrammarChecker.visit(tree)
-    if GrammarChecker.HasError:
-        return
-    print('Countinue')
+    #GrammarChecker = GrammarCheckVisitor()
+    #GrammarChecker.visit(tree)
+    #if GrammarChecker.HasError:
+    #    return
+    #print('Countinue')
     #TypeChecker = TypeCheckVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
     #TypeChecker.visit(tree)
 

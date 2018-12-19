@@ -89,39 +89,12 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#TRUEFALSE.
-    def enterTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
+    # Enter a parse tree produced by MiniJavaParser#NEWID.
+    def enterNEWID(self, ctx:MiniJavaParser.NEWIDContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#TRUEFALSE.
-    def exitTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#INTLIT.
-    def enterINTLIT(self, ctx:MiniJavaParser.INTLITContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#INTLIT.
-    def exitINTLIT(self, ctx:MiniJavaParser.INTLITContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#VAR.
-    def enterVAR(self, ctx:MiniJavaParser.VARContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#VAR.
-    def exitVAR(self, ctx:MiniJavaParser.VARContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#THIS.
-    def enterTHIS(self, ctx:MiniJavaParser.THISContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#THIS.
-    def exitTHIS(self, ctx:MiniJavaParser.THISContext):
+    # Exit a parse tree produced by MiniJavaParser#NEWID.
+    def exitNEWID(self, ctx:MiniJavaParser.NEWIDContext):
         pass
 
 
@@ -131,15 +104,6 @@ class MiniJavaListener(ParseTreeListener):
 
     # Exit a parse tree produced by MiniJavaParser#NEWINT.
     def exitNEWINT(self, ctx:MiniJavaParser.NEWINTContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#NEWID.
-    def enterNEWID(self, ctx:MiniJavaParser.NEWIDContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#NEWID.
-    def exitNEWID(self, ctx:MiniJavaParser.NEWIDContext):
         pass
 
 
@@ -161,30 +125,21 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#SQUAREBRACKET.
-    def enterSQUAREBRACKET(self, ctx:MiniJavaParser.SQUAREBRACKETContext):
+    # Enter a parse tree produced by MiniJavaParser#VAR.
+    def enterVAR(self, ctx:MiniJavaParser.VARContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#SQUAREBRACKET.
-    def exitSQUAREBRACKET(self, ctx:MiniJavaParser.SQUAREBRACKETContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#LENGTH.
-    def enterLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#LENGTH.
-    def exitLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
+    # Exit a parse tree produced by MiniJavaParser#VAR.
+    def exitVAR(self, ctx:MiniJavaParser.VARContext):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#FUNCTION.
-    def enterFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
+    # Enter a parse tree produced by MiniJavaParser#ARRAYSEARCH.
+    def enterARRAYSEARCH(self, ctx:MiniJavaParser.ARRAYSEARCHContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#FUNCTION.
-    def exitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
+    # Exit a parse tree produced by MiniJavaParser#ARRAYSEARCH.
+    def exitARRAYSEARCH(self, ctx:MiniJavaParser.ARRAYSEARCHContext):
         pass
 
 
@@ -197,12 +152,48 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#NULL.
-    def enterNULL(self, ctx:MiniJavaParser.NULLContext):
+    # Enter a parse tree produced by MiniJavaParser#LENGTH.
+    def enterLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#NULL.
-    def exitNULL(self, ctx:MiniJavaParser.NULLContext):
+    # Exit a parse tree produced by MiniJavaParser#LENGTH.
+    def exitLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#THIS.
+    def enterTHIS(self, ctx:MiniJavaParser.THISContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#THIS.
+    def exitTHIS(self, ctx:MiniJavaParser.THISContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#BOOLLIT.
+    def enterBOOLLIT(self, ctx:MiniJavaParser.BOOLLITContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#BOOLLIT.
+    def exitBOOLLIT(self, ctx:MiniJavaParser.BOOLLITContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#INTLIT.
+    def enterINTLIT(self, ctx:MiniJavaParser.INTLITContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#INTLIT.
+    def exitINTLIT(self, ctx:MiniJavaParser.INTLITContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#FUNCTION.
+    def enterFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#FUNCTION.
+    def exitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
         pass
 
 

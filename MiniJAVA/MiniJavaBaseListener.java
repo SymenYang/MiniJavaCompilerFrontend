@@ -123,49 +123,13 @@ public class MiniJavaBaseListener implements MiniJavaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTRUEFALSE(MiniJavaParser.TRUEFALSEContext ctx) { }
+	@Override public void enterNEWID(MiniJavaParser.NEWIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTRUEFALSE(MiniJavaParser.TRUEFALSEContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterINTLIT(MiniJavaParser.INTLITContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitINTLIT(MiniJavaParser.INTLITContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVAR(MiniJavaParser.VARContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVAR(MiniJavaParser.VARContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTHIS(MiniJavaParser.THISContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTHIS(MiniJavaParser.THISContext ctx) { }
+	@Override public void exitNEWID(MiniJavaParser.NEWIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -178,18 +142,6 @@ public class MiniJavaBaseListener implements MiniJavaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNEWINT(MiniJavaParser.NEWINTContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNEWID(MiniJavaParser.NEWIDContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNEWID(MiniJavaParser.NEWIDContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -219,37 +171,25 @@ public class MiniJavaBaseListener implements MiniJavaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSQUAREBRACKET(MiniJavaParser.SQUAREBRACKETContext ctx) { }
+	@Override public void enterVAR(MiniJavaParser.VARContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSQUAREBRACKET(MiniJavaParser.SQUAREBRACKETContext ctx) { }
+	@Override public void exitVAR(MiniJavaParser.VARContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLENGTH(MiniJavaParser.LENGTHContext ctx) { }
+	@Override public void enterARRAYSEARCH(MiniJavaParser.ARRAYSEARCHContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLENGTH(MiniJavaParser.LENGTHContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFUNCTION(MiniJavaParser.FUNCTIONContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFUNCTION(MiniJavaParser.FUNCTIONContext ctx) { }
+	@Override public void exitARRAYSEARCH(MiniJavaParser.ARRAYSEARCHContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -267,13 +207,61 @@ public class MiniJavaBaseListener implements MiniJavaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNULL(MiniJavaParser.NULLContext ctx) { }
+	@Override public void enterLENGTH(MiniJavaParser.LENGTHContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNULL(MiniJavaParser.NULLContext ctx) { }
+	@Override public void exitLENGTH(MiniJavaParser.LENGTHContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTHIS(MiniJavaParser.THISContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTHIS(MiniJavaParser.THISContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBOOLLIT(MiniJavaParser.BOOLLITContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBOOLLIT(MiniJavaParser.BOOLLITContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterINTLIT(MiniJavaParser.INTLITContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitINTLIT(MiniJavaParser.INTLITContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFUNCTION(MiniJavaParser.FUNCTIONContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFUNCTION(MiniJavaParser.FUNCTIONContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

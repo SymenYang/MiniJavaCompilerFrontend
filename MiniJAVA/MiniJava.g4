@@ -17,36 +17,35 @@ atype: 'int' '[' ']' #INTARRAY
     ;
 
 //fragment
-//expression: 
-//| expression '[' expression ']'
-//| expression '.' 'length'
-//| expression '.' Identifier '(' ( expression ( ',' expression )* )? ')'
-//| expression ( '&&' | '<' | '+' | '-' | '*' ) expression
-//| 'true'
-//|   IntergerLiteral
-//|   'false'
-//|   Identifier
-//|   'this'
-//|   'new' 'int' '[' expression ']'
-//|   'new' Identifier '(' ')'
-//|   '!' expression
-//|   '(' expression ')' ;
+expression:    expression '[' expression ']' # ARRAYSEARCH
+|   expression '.' 'length' # LENGTH
+|   expression '.' Identifier '(' ( expression ( ',' expression )* )? ')' # FUNCTION
+|   expression ( '&&' | '<' | '+' | '-' | '*' ) expression # BIOP
+|   ('true' | 'false') # BOOLLIT
+|   IntergerLiteral # INTLIT
+|   Identifier # VAR
+|   'this' # THIS
+|   'new' 'int' '[' expression ']' # NEWINT
+|   'new' Identifier '(' ')' # NEWID
+|   '!' expression #NOT
+|   '(' expression ')' #BRACKET
+;
 
-expression: BOOL=('true'|'false') expression2 #TRUEFALSE
-|   IntergerLiteral expression2 #INTLIT
-|   Identifier expression2 #VAR
-|   'this' expression2 #THIS
-|   'new' 'int' '[' expression ']' expression2 #NEWINT
-|   'new' Identifier '(' ')' expression2 #NEWID
-|   '!' expression expression2 #NOT
-|   '(' expression ')' expression2 #BRACKET
-    ;
-expression2: '[' expression ']' expression2 #SQUAREBRACKET
-|   '.' 'length' expression2 #LENGTH
-|   '.' Identifier '(' ( expression ( ',' expression )* )? ')' expression2 #FUNCTION
-|   op=( '&&' | '<' | '*' | '-' | '+' ) expression #BIOP
-|   #NULL
-    ;
+//expression: BOOL=('true'|'false') expression2 #TRUEFALSE
+//|   IntergerLiteral expression2 #INTLIT
+//|   Identifier expression2 #VAR
+//|   'this' expression2 #THIS
+//|   'new' 'int' '[' expression ']' expression2 #NEWINT
+//|   'new' Identifier '(' ')' expression2 #NEWID
+//|   '!' expression expression2 #NOT
+//|   '(' expression ')' expression2 #BRACKET
+//    ;
+//expression2: '[' expression ']' expression2 #SQUAREBRACKET
+//|   '.' 'length' expression2 #LENGTH
+//|   '.' Identifier '(' ( expression ( ',' expression )* )? ')' expression2 #FUNCTION
+//|   op=( '&&' | '<' | '*' | '-' | '+' ) expression #BIOP
+//|   #NULL
+//    ;
 
 statement : '{' ( statement )* '}' #CURLYBRACKET
 |   'if' '(' expression ')' statement 'else' statement #IFELSE

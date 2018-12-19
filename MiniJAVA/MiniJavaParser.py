@@ -8,93 +8,90 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3*")
-        buf.write("\u00d9\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
-        buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\7\2\27\n\2\f\2\16\2\32")
-        buf.write("\13\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4\62\n\4\3")
-        buf.write("\4\3\4\7\4\66\n\4\f\4\16\49\13\4\3\4\7\4<\n\4\f\4\16\4")
-        buf.write("?\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6")
-        buf.write("\3\6\3\6\3\6\3\6\7\6Q\n\6\f\6\16\6T\13\6\5\6V\n\6\3\6")
-        buf.write("\3\6\3\6\7\6[\n\6\f\6\16\6^\13\6\3\6\7\6a\n\6\f\6\16\6")
-        buf.write("d\13\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7")
-        buf.write("q\n\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
+        buf.write("\u00d2\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\4\b\t\b\4\t\t\t\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3")
+        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
+        buf.write("\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4\60\n\4\3\4\3\4\7")
+        buf.write("\4\64\n\4\f\4\16\4\67\13\4\3\4\7\4:\n\4\f\4\16\4=\13\4")
+        buf.write("\3\4\3\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3")
+        buf.write("\6\3\6\3\6\7\6O\n\6\f\6\16\6R\13\6\5\6T\n\6\3\6\3\6\3")
+        buf.write("\6\7\6Y\n\6\f\6\16\6\\\13\6\3\6\7\6_\n\6\f\6\16\6b\13")
+        buf.write("\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7o\n")
+        buf.write("\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
+        buf.write("\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\b\u0086\n\b\3\b\3\b")
         buf.write("\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3")
-        buf.write("\b\3\b\3\b\3\b\5\b\u0090\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00a0\n\t\f\t\16\t")
-        buf.write("\u00a3\13\t\5\t\u00a5\n\t\3\t\3\t\3\t\3\t\3\t\5\t\u00ac")
-        buf.write("\n\t\3\n\3\n\7\n\u00b0\n\n\f\n\16\n\u00b3\13\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write("\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\5\n\u00d7\n\n\3\n\2\2\13\2\4\6\b")
-        buf.write("\n\f\16\20\22\2\4\3\2\25\26\3\2&*\2\u00ed\2\24\3\2\2\2")
-        buf.write("\4\33\3\2\2\2\6-\3\2\2\2\bB\3\2\2\2\nF\3\2\2\2\fp\3\2")
-        buf.write("\2\2\16\u008f\3\2\2\2\20\u00ab\3\2\2\2\22\u00d6\3\2\2")
-        buf.write("\2\24\30\5\4\3\2\25\27\5\6\4\2\26\25\3\2\2\2\27\32\3\2")
-        buf.write("\2\2\30\26\3\2\2\2\30\31\3\2\2\2\31\3\3\2\2\2\32\30\3")
-        buf.write("\2\2\2\33\34\7\3\2\2\34\35\7\"\2\2\35\36\7\4\2\2\36\37")
-        buf.write("\7\5\2\2\37 \7\6\2\2 !\7\7\2\2!\"\7\b\2\2\"#\7\t\2\2#")
-        buf.write("$\7\n\2\2$%\7\13\2\2%&\7\f\2\2&\'\7\"\2\2\'(\7\r\2\2(")
-        buf.write(")\7\4\2\2)*\5\22\n\2*+\7\16\2\2+,\7\16\2\2,\5\3\2\2\2")
-        buf.write("-.\7\3\2\2.\61\7\"\2\2/\60\7\17\2\2\60\62\7\"\2\2\61/")
-        buf.write("\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\67\7\4\2\2\64")
-        buf.write("\66\5\b\5\2\65\64\3\2\2\2\669\3\2\2\2\67\65\3\2\2\2\67")
-        buf.write("8\3\2\2\28=\3\2\2\29\67\3\2\2\2:<\5\n\6\2;:\3\2\2\2<?")
-        buf.write("\3\2\2\2=;\3\2\2\2=>\3\2\2\2>@\3\2\2\2?=\3\2\2\2@A\7\16")
-        buf.write("\2\2A\7\3\2\2\2BC\5\f\7\2CD\7\"\2\2DE\7\20\2\2E\t\3\2")
-        buf.write("\2\2FG\7\5\2\2GH\5\f\7\2HI\7\"\2\2IU\7\t\2\2JK\5\f\7\2")
-        buf.write("KR\7\"\2\2LM\7\21\2\2MN\5\f\7\2NO\7\"\2\2OQ\3\2\2\2PL")
-        buf.write("\3\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2SV\3\2\2\2TR\3\2")
-        buf.write("\2\2UJ\3\2\2\2UV\3\2\2\2VW\3\2\2\2WX\7\r\2\2X\\\7\4\2")
-        buf.write("\2Y[\5\b\5\2ZY\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2")
-        buf.write("]b\3\2\2\2^\\\3\2\2\2_a\5\22\n\2`_\3\2\2\2ad\3\2\2\2b")
-        buf.write("`\3\2\2\2bc\3\2\2\2ce\3\2\2\2db\3\2\2\2ef\7\22\2\2fg\5")
-        buf.write("\16\b\2gh\7\20\2\2hi\7\16\2\2i\13\3\2\2\2jk\7\23\2\2k")
-        buf.write("l\7\13\2\2lq\7\f\2\2mq\7\24\2\2nq\7\23\2\2oq\7\"\2\2p")
-        buf.write("j\3\2\2\2pm\3\2\2\2pn\3\2\2\2po\3\2\2\2q\r\3\2\2\2rs\t")
-        buf.write("\2\2\2s\u0090\5\20\t\2tu\7!\2\2u\u0090\5\20\t\2vw\7\"")
-        buf.write("\2\2w\u0090\5\20\t\2xy\7\27\2\2y\u0090\5\20\t\2z{\7\30")
-        buf.write("\2\2{|\7\23\2\2|}\7\13\2\2}~\5\16\b\2~\177\7\f\2\2\177")
-        buf.write("\u0080\5\20\t\2\u0080\u0090\3\2\2\2\u0081\u0082\7\30\2")
-        buf.write("\2\u0082\u0083\7\"\2\2\u0083\u0084\7\t\2\2\u0084\u0085")
-        buf.write("\7\r\2\2\u0085\u0090\5\20\t\2\u0086\u0087\7\31\2\2\u0087")
-        buf.write("\u0088\5\16\b\2\u0088\u0089\5\20\t\2\u0089\u0090\3\2\2")
-        buf.write("\2\u008a\u008b\7\t\2\2\u008b\u008c\5\16\b\2\u008c\u008d")
-        buf.write("\7\r\2\2\u008d\u008e\5\20\t\2\u008e\u0090\3\2\2\2\u008f")
-        buf.write("r\3\2\2\2\u008ft\3\2\2\2\u008fv\3\2\2\2\u008fx\3\2\2\2")
-        buf.write("\u008fz\3\2\2\2\u008f\u0081\3\2\2\2\u008f\u0086\3\2\2")
-        buf.write("\2\u008f\u008a\3\2\2\2\u0090\17\3\2\2\2\u0091\u0092\7")
-        buf.write("\13\2\2\u0092\u0093\5\16\b\2\u0093\u0094\7\f\2\2\u0094")
-        buf.write("\u0095\5\20\t\2\u0095\u00ac\3\2\2\2\u0096\u0097\7\32\2")
-        buf.write("\2\u0097\u0098\7\33\2\2\u0098\u00ac\5\20\t\2\u0099\u009a")
-        buf.write("\7\32\2\2\u009a\u009b\7\"\2\2\u009b\u00a4\7\t\2\2\u009c")
-        buf.write("\u00a1\5\16\b\2\u009d\u009e\7\21\2\2\u009e\u00a0\5\16")
-        buf.write("\b\2\u009f\u009d\3\2\2\2\u00a0\u00a3\3\2\2\2\u00a1\u009f")
-        buf.write("\3\2\2\2\u00a1\u00a2\3\2\2\2\u00a2\u00a5\3\2\2\2\u00a3")
-        buf.write("\u00a1\3\2\2\2\u00a4\u009c\3\2\2\2\u00a4\u00a5\3\2\2\2")
-        buf.write("\u00a5\u00a6\3\2\2\2\u00a6\u00a7\7\r\2\2\u00a7\u00ac\5")
-        buf.write("\20\t\2\u00a8\u00a9\t\3\2\2\u00a9\u00ac\5\16\b\2\u00aa")
-        buf.write("\u00ac\3\2\2\2\u00ab\u0091\3\2\2\2\u00ab\u0096\3\2\2\2")
-        buf.write("\u00ab\u0099\3\2\2\2\u00ab\u00a8\3\2\2\2\u00ab\u00aa\3")
-        buf.write("\2\2\2\u00ac\21\3\2\2\2\u00ad\u00b1\7\4\2\2\u00ae\u00b0")
-        buf.write("\5\22\n\2\u00af\u00ae\3\2\2\2\u00b0\u00b3\3\2\2\2\u00b1")
-        buf.write("\u00af\3\2\2\2\u00b1\u00b2\3\2\2\2\u00b2\u00b4\3\2\2\2")
-        buf.write("\u00b3\u00b1\3\2\2\2\u00b4\u00d7\7\16\2\2\u00b5\u00b6")
-        buf.write("\7\34\2\2\u00b6\u00b7\7\t\2\2\u00b7\u00b8\5\16\b\2\u00b8")
-        buf.write("\u00b9\7\r\2\2\u00b9\u00ba\5\22\n\2\u00ba\u00bb\7\35\2")
-        buf.write("\2\u00bb\u00bc\5\22\n\2\u00bc\u00d7\3\2\2\2\u00bd\u00be")
-        buf.write("\7\36\2\2\u00be\u00bf\7\t\2\2\u00bf\u00c0\5\16\b\2\u00c0")
-        buf.write("\u00c1\7\r\2\2\u00c1\u00c2\5\22\n\2\u00c2\u00d7\3\2\2")
-        buf.write("\2\u00c3\u00c4\7\37\2\2\u00c4\u00c5\7\t\2\2\u00c5\u00c6")
-        buf.write("\5\16\b\2\u00c6\u00c7\7\r\2\2\u00c7\u00c8\7\20\2\2\u00c8")
-        buf.write("\u00d7\3\2\2\2\u00c9\u00ca\7\"\2\2\u00ca\u00cb\7 \2\2")
-        buf.write("\u00cb\u00cc\5\16\b\2\u00cc\u00cd\7\20\2\2\u00cd\u00d7")
-        buf.write("\3\2\2\2\u00ce\u00cf\7\"\2\2\u00cf\u00d0\7\13\2\2\u00d0")
-        buf.write("\u00d1\5\16\b\2\u00d1\u00d2\7\f\2\2\u00d2\u00d3\7 \2\2")
-        buf.write("\u00d3\u00d4\5\16\b\2\u00d4\u00d5\7\20\2\2\u00d5\u00d7")
-        buf.write("\3\2\2\2\u00d6\u00ad\3\2\2\2\u00d6\u00b5\3\2\2\2\u00d6")
-        buf.write("\u00bd\3\2\2\2\u00d6\u00c3\3\2\2\2\u00d6\u00c9\3\2\2\2")
-        buf.write("\u00d6\u00ce\3\2\2\2\u00d7\23\3\2\2\2\21\30\61\67=RU\\")
-        buf.write("bp\u008f\u00a1\u00a4\u00ab\u00b1\u00d6")
+        buf.write("\b\3\b\3\b\7\b\u009a\n\b\f\b\16\b\u009d\13\b\5\b\u009f")
+        buf.write("\n\b\3\b\7\b\u00a2\n\b\f\b\16\b\u00a5\13\b\3\t\3\t\7\t")
+        buf.write("\u00a9\n\t\f\t\16\t\u00ac\13\t\3\t\3\t\3\t\3\t\3\t\3\t")
+        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
+        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
+        buf.write("\3\t\5\t\u00d0\n\t\3\t\2\3\16\n\2\4\6\b\n\f\16\20\2\4")
+        buf.write("\3\2\27\30\3\2&*\2\u00e7\2\22\3\2\2\2\4\31\3\2\2\2\6+")
+        buf.write("\3\2\2\2\b@\3\2\2\2\nD\3\2\2\2\fn\3\2\2\2\16\u0085\3\2")
+        buf.write("\2\2\20\u00cf\3\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23")
+        buf.write("\3\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27")
+        buf.write("\3\3\2\2\2\30\26\3\2\2\2\31\32\7\3\2\2\32\33\7\"\2\2\33")
+        buf.write("\34\7\4\2\2\34\35\7\5\2\2\35\36\7\6\2\2\36\37\7\7\2\2")
+        buf.write("\37 \7\b\2\2 !\7\t\2\2!\"\7\n\2\2\"#\7\13\2\2#$\7\f\2")
+        buf.write("\2$%\7\"\2\2%&\7\r\2\2&\'\7\4\2\2\'(\5\20\t\2()\7\16\2")
+        buf.write("\2)*\7\16\2\2*\5\3\2\2\2+,\7\3\2\2,/\7\"\2\2-.\7\17\2")
+        buf.write("\2.\60\7\"\2\2/-\3\2\2\2/\60\3\2\2\2\60\61\3\2\2\2\61")
+        buf.write("\65\7\4\2\2\62\64\5\b\5\2\63\62\3\2\2\2\64\67\3\2\2\2")
+        buf.write("\65\63\3\2\2\2\65\66\3\2\2\2\66;\3\2\2\2\67\65\3\2\2\2")
+        buf.write("8:\5\n\6\298\3\2\2\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2<>\3")
+        buf.write("\2\2\2=;\3\2\2\2>?\7\16\2\2?\7\3\2\2\2@A\5\f\7\2AB\7\"")
+        buf.write("\2\2BC\7\20\2\2C\t\3\2\2\2DE\7\5\2\2EF\5\f\7\2FG\7\"\2")
+        buf.write("\2GS\7\t\2\2HI\5\f\7\2IP\7\"\2\2JK\7\21\2\2KL\5\f\7\2")
+        buf.write("LM\7\"\2\2MO\3\2\2\2NJ\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3")
+        buf.write("\2\2\2QT\3\2\2\2RP\3\2\2\2SH\3\2\2\2ST\3\2\2\2TU\3\2\2")
+        buf.write("\2UV\7\r\2\2VZ\7\4\2\2WY\5\b\5\2XW\3\2\2\2Y\\\3\2\2\2")
+        buf.write("ZX\3\2\2\2Z[\3\2\2\2[`\3\2\2\2\\Z\3\2\2\2]_\5\20\t\2^")
+        buf.write("]\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ac\3\2\2\2b`\3")
+        buf.write("\2\2\2cd\7\22\2\2de\5\16\b\2ef\7\20\2\2fg\7\16\2\2g\13")
+        buf.write("\3\2\2\2hi\7\23\2\2ij\7\13\2\2jo\7\f\2\2ko\7\24\2\2lo")
+        buf.write("\7\23\2\2mo\7\"\2\2nh\3\2\2\2nk\3\2\2\2nl\3\2\2\2nm\3")
+        buf.write("\2\2\2o\r\3\2\2\2pq\b\b\1\2q\u0086\t\2\2\2r\u0086\7!\2")
+        buf.write("\2s\u0086\7\"\2\2t\u0086\7\31\2\2uv\7\32\2\2vw\7\23\2")
+        buf.write("\2wx\7\13\2\2xy\5\16\b\2yz\7\f\2\2z\u0086\3\2\2\2{|\7")
+        buf.write("\32\2\2|}\7\"\2\2}~\7\t\2\2~\u0086\7\r\2\2\177\u0080\7")
+        buf.write("\33\2\2\u0080\u0086\5\16\b\4\u0081\u0082\7\t\2\2\u0082")
+        buf.write("\u0083\5\16\b\2\u0083\u0084\7\r\2\2\u0084\u0086\3\2\2")
+        buf.write("\2\u0085p\3\2\2\2\u0085r\3\2\2\2\u0085s\3\2\2\2\u0085")
+        buf.write("t\3\2\2\2\u0085u\3\2\2\2\u0085{\3\2\2\2\u0085\177\3\2")
+        buf.write("\2\2\u0085\u0081\3\2\2\2\u0086\u00a3\3\2\2\2\u0087\u0088")
+        buf.write("\f\13\2\2\u0088\u0089\t\3\2\2\u0089\u00a2\5\16\b\f\u008a")
+        buf.write("\u008b\f\16\2\2\u008b\u008c\7\13\2\2\u008c\u008d\5\16")
+        buf.write("\b\2\u008d\u008e\7\f\2\2\u008e\u00a2\3\2\2\2\u008f\u0090")
+        buf.write("\f\r\2\2\u0090\u0091\7\25\2\2\u0091\u00a2\7\26\2\2\u0092")
+        buf.write("\u0093\f\f\2\2\u0093\u0094\7\25\2\2\u0094\u0095\7\"\2")
+        buf.write("\2\u0095\u009e\7\t\2\2\u0096\u009b\5\16\b\2\u0097\u0098")
+        buf.write("\7\21\2\2\u0098\u009a\5\16\b\2\u0099\u0097\3\2\2\2\u009a")
+        buf.write("\u009d\3\2\2\2\u009b\u0099\3\2\2\2\u009b\u009c\3\2\2\2")
+        buf.write("\u009c\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009e\u0096\3")
+        buf.write("\2\2\2\u009e\u009f\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\u00a2")
+        buf.write("\7\r\2\2\u00a1\u0087\3\2\2\2\u00a1\u008a\3\2\2\2\u00a1")
+        buf.write("\u008f\3\2\2\2\u00a1\u0092\3\2\2\2\u00a2\u00a5\3\2\2\2")
+        buf.write("\u00a3\u00a1\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\17\3\2")
+        buf.write("\2\2\u00a5\u00a3\3\2\2\2\u00a6\u00aa\7\4\2\2\u00a7\u00a9")
+        buf.write("\5\20\t\2\u00a8\u00a7\3\2\2\2\u00a9\u00ac\3\2\2\2\u00aa")
+        buf.write("\u00a8\3\2\2\2\u00aa\u00ab\3\2\2\2\u00ab\u00ad\3\2\2\2")
+        buf.write("\u00ac\u00aa\3\2\2\2\u00ad\u00d0\7\16\2\2\u00ae\u00af")
+        buf.write("\7\34\2\2\u00af\u00b0\7\t\2\2\u00b0\u00b1\5\16\b\2\u00b1")
+        buf.write("\u00b2\7\r\2\2\u00b2\u00b3\5\20\t\2\u00b3\u00b4\7\35\2")
+        buf.write("\2\u00b4\u00b5\5\20\t\2\u00b5\u00d0\3\2\2\2\u00b6\u00b7")
+        buf.write("\7\36\2\2\u00b7\u00b8\7\t\2\2\u00b8\u00b9\5\16\b\2\u00b9")
+        buf.write("\u00ba\7\r\2\2\u00ba\u00bb\5\20\t\2\u00bb\u00d0\3\2\2")
+        buf.write("\2\u00bc\u00bd\7\37\2\2\u00bd\u00be\7\t\2\2\u00be\u00bf")
+        buf.write("\5\16\b\2\u00bf\u00c0\7\r\2\2\u00c0\u00c1\7\20\2\2\u00c1")
+        buf.write("\u00d0\3\2\2\2\u00c2\u00c3\7\"\2\2\u00c3\u00c4\7 \2\2")
+        buf.write("\u00c4\u00c5\5\16\b\2\u00c5\u00c6\7\20\2\2\u00c6\u00d0")
+        buf.write("\3\2\2\2\u00c7\u00c8\7\"\2\2\u00c8\u00c9\7\13\2\2\u00c9")
+        buf.write("\u00ca\5\16\b\2\u00ca\u00cb\7\f\2\2\u00cb\u00cc\7 \2\2")
+        buf.write("\u00cc\u00cd\5\16\b\2\u00cd\u00ce\7\20\2\2\u00ce\u00d0")
+        buf.write("\3\2\2\2\u00cf\u00a6\3\2\2\2\u00cf\u00ae\3\2\2\2\u00cf")
+        buf.write("\u00b6\3\2\2\2\u00cf\u00bc\3\2\2\2\u00cf\u00c2\3\2\2\2")
+        buf.write("\u00cf\u00c7\3\2\2\2\u00d0\21\3\2\2\2\22\26/\65;PSZ`n")
+        buf.write("\u0085\u009b\u009e\u00a1\u00a3\u00aa\u00cf")
         return buf.getvalue()
 
 
@@ -111,8 +108,8 @@ class MiniJavaParser ( Parser ):
     literalNames = [ "<INVALID>", "'class'", "'{'", "'public'", "'static'", 
                      "'void'", "'main'", "'('", "'String'", "'['", "']'", 
                      "')'", "'}'", "'extends'", "';'", "','", "'return'", 
-                     "'int'", "'boolean'", "'true'", "'false'", "'this'", 
-                     "'new'", "'!'", "'.'", "'length'", "'if'", "'else'", 
+                     "'int'", "'boolean'", "'.'", "'length'", "'true'", 
+                     "'false'", "'this'", "'new'", "'!'", "'if'", "'else'", 
                      "'while'", "'System.out.println'", "'='", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "'&&'", "'*'", "'<'", "'+'", "'-'" ]
@@ -135,12 +132,10 @@ class MiniJavaParser ( Parser ):
     RULE_methodDeclaration = 4
     RULE_atype = 5
     RULE_expression = 6
-    RULE_expression2 = 7
-    RULE_statement = 8
+    RULE_statement = 7
 
     ruleNames =  [ "goal", "mainClass", "classDeclaration", "varDeclaration", 
-                   "methodDeclaration", "atype", "expression", "expression2", 
-                   "statement" ]
+                   "methodDeclaration", "atype", "expression", "statement" ]
 
     EOF = Token.EOF
     T__0=1
@@ -236,15 +231,15 @@ class MiniJavaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 18
+            self.state = 16
             self.mainClass()
-            self.state = 22
+            self.state = 20
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==MiniJavaParser.T__0:
-                self.state = 19
+                self.state = 17
                 self.classDeclaration()
-                self.state = 24
+                self.state = 22
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -298,39 +293,39 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_mainClass)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 25
+            self.state = 23
             self.match(MiniJavaParser.T__0)
+            self.state = 24
+            self.match(MiniJavaParser.Identifier)
+            self.state = 25
+            self.match(MiniJavaParser.T__1)
             self.state = 26
-            self.match(MiniJavaParser.Identifier)
-            self.state = 27
-            self.match(MiniJavaParser.T__1)
-            self.state = 28
             self.match(MiniJavaParser.T__2)
-            self.state = 29
+            self.state = 27
             self.match(MiniJavaParser.T__3)
-            self.state = 30
+            self.state = 28
             self.match(MiniJavaParser.T__4)
-            self.state = 31
+            self.state = 29
             self.match(MiniJavaParser.T__5)
-            self.state = 32
+            self.state = 30
             self.match(MiniJavaParser.T__6)
-            self.state = 33
+            self.state = 31
             self.match(MiniJavaParser.T__7)
-            self.state = 34
+            self.state = 32
             self.match(MiniJavaParser.T__8)
-            self.state = 35
+            self.state = 33
             self.match(MiniJavaParser.T__9)
-            self.state = 36
+            self.state = 34
             self.match(MiniJavaParser.Identifier)
-            self.state = 37
+            self.state = 35
             self.match(MiniJavaParser.T__10)
-            self.state = 38
+            self.state = 36
             self.match(MiniJavaParser.T__1)
-            self.state = 39
+            self.state = 37
             self.statement()
-            self.state = 40
+            self.state = 38
             self.match(MiniJavaParser.T__11)
-            self.state = 41
+            self.state = 39
             self.match(MiniJavaParser.T__11)
         except RecognitionException as re:
             localctx.exception = re
@@ -393,43 +388,43 @@ class MiniJavaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 43
+            self.state = 41
             self.match(MiniJavaParser.T__0)
-            self.state = 44
+            self.state = 42
             self.match(MiniJavaParser.Identifier)
-            self.state = 47
+            self.state = 45
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==MiniJavaParser.T__12:
-                self.state = 45
+                self.state = 43
                 self.match(MiniJavaParser.T__12)
-                self.state = 46
+                self.state = 44
                 self.match(MiniJavaParser.Identifier)
 
 
-            self.state = 49
+            self.state = 47
             self.match(MiniJavaParser.T__1)
-            self.state = 53
+            self.state = 51
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__16) | (1 << MiniJavaParser.T__17) | (1 << MiniJavaParser.Identifier))) != 0):
-                self.state = 50
+                self.state = 48
                 self.varDeclaration()
-                self.state = 55
+                self.state = 53
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 59
+            self.state = 57
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==MiniJavaParser.T__2:
-                self.state = 56
+                self.state = 54
                 self.methodDeclaration()
-                self.state = 61
+                self.state = 59
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 62
+            self.state = 60
             self.match(MiniJavaParser.T__11)
         except RecognitionException as re:
             localctx.exception = re
@@ -478,11 +473,11 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_varDeclaration)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 64
+            self.state = 62
             self.atype()
-            self.state = 65
+            self.state = 63
             self.match(MiniJavaParser.Identifier)
-            self.state = 66
+            self.state = 64
             self.match(MiniJavaParser.T__13)
         except RecognitionException as re:
             localctx.exception = re
@@ -556,70 +551,70 @@ class MiniJavaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 68
+            self.state = 66
             self.match(MiniJavaParser.T__2)
-            self.state = 69
+            self.state = 67
             self.atype()
-            self.state = 70
+            self.state = 68
             self.match(MiniJavaParser.Identifier)
-            self.state = 71
+            self.state = 69
             self.match(MiniJavaParser.T__6)
-            self.state = 83
+            self.state = 81
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__16) | (1 << MiniJavaParser.T__17) | (1 << MiniJavaParser.Identifier))) != 0):
-                self.state = 72
+                self.state = 70
                 self.atype()
-                self.state = 73
+                self.state = 71
                 self.match(MiniJavaParser.Identifier)
-                self.state = 80
+                self.state = 78
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==MiniJavaParser.T__14:
-                    self.state = 74
+                    self.state = 72
                     self.match(MiniJavaParser.T__14)
-                    self.state = 75
+                    self.state = 73
                     self.atype()
-                    self.state = 76
+                    self.state = 74
                     self.match(MiniJavaParser.Identifier)
-                    self.state = 82
+                    self.state = 80
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
 
 
-            self.state = 85
+            self.state = 83
             self.match(MiniJavaParser.T__10)
-            self.state = 86
+            self.state = 84
             self.match(MiniJavaParser.T__1)
-            self.state = 90
+            self.state = 88
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 87
+                    self.state = 85
                     self.varDeclaration() 
-                self.state = 92
+                self.state = 90
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
 
-            self.state = 96
+            self.state = 94
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__1) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__27) | (1 << MiniJavaParser.T__28) | (1 << MiniJavaParser.Identifier))) != 0):
-                self.state = 93
+                self.state = 91
                 self.statement()
-                self.state = 98
+                self.state = 96
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 99
+            self.state = 97
             self.match(MiniJavaParser.T__15)
-            self.state = 100
-            self.expression()
-            self.state = 101
+            self.state = 98
+            self.expression(0)
+            self.state = 99
             self.match(MiniJavaParser.T__13)
-            self.state = 102
+            self.state = 100
             self.match(MiniJavaParser.T__11)
         except RecognitionException as re:
             localctx.exception = re
@@ -741,38 +736,38 @@ class MiniJavaParser ( Parser ):
         localctx = MiniJavaParser.AtypeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_atype)
         try:
-            self.state = 110
+            self.state = 108
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 localctx = MiniJavaParser.INTARRAYContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 104
+                self.state = 102
                 self.match(MiniJavaParser.T__16)
-                self.state = 105
+                self.state = 103
                 self.match(MiniJavaParser.T__8)
-                self.state = 106
+                self.state = 104
                 self.match(MiniJavaParser.T__9)
                 pass
 
             elif la_ == 2:
                 localctx = MiniJavaParser.BOOLContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 107
+                self.state = 105
                 self.match(MiniJavaParser.T__17)
                 pass
 
             elif la_ == 3:
                 localctx = MiniJavaParser.INTContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 108
+                self.state = 106
                 self.match(MiniJavaParser.T__16)
                 pass
 
             elif la_ == 4:
                 localctx = MiniJavaParser.IDContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 109
+                self.state = 107
                 self.match(MiniJavaParser.Identifier)
                 pass
 
@@ -800,7 +795,6 @@ class MiniJavaParser ( Parser ):
             super().copyFrom(ctx)
 
 
-
     class NEWIDContext(ExpressionContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
@@ -809,9 +803,6 @@ class MiniJavaParser ( Parser ):
 
         def Identifier(self):
             return self.getToken(MiniJavaParser.Identifier, 0)
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNEWID" ):
@@ -836,9 +827,6 @@ class MiniJavaParser ( Parser ):
 
         def expression(self):
             return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
-
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
 
 
         def enterRule(self, listener:ParseTreeListener):
@@ -865,9 +853,6 @@ class MiniJavaParser ( Parser ):
         def expression(self):
             return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
 
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNOT" ):
@@ -893,9 +878,6 @@ class MiniJavaParser ( Parser ):
         def expression(self):
             return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
 
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBRACKET" ):
@@ -920,9 +902,6 @@ class MiniJavaParser ( Parser ):
 
         def Identifier(self):
             return self.getToken(MiniJavaParser.Identifier, 0)
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterVAR" ):
@@ -939,301 +918,45 @@ class MiniJavaParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class TRUEFALSEContext(ExpressionContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
-            super().__init__(parser)
-            self.BOOL = None # Token
-            self.copyFrom(ctx)
-
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTRUEFALSE" ):
-                listener.enterTRUEFALSE(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTRUEFALSE" ):
-                listener.exitTRUEFALSE(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitTRUEFALSE" ):
-                return visitor.visitTRUEFALSE(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class THISContext(ExpressionContext):
+    class ARRAYSEARCHContext(ExpressionContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
 
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTHIS" ):
-                listener.enterTHIS(self)
+            if hasattr( listener, "enterARRAYSEARCH" ):
+                listener.enterARRAYSEARCH(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTHIS" ):
-                listener.exitTHIS(self)
+            if hasattr( listener, "exitARRAYSEARCH" ):
+                listener.exitARRAYSEARCH(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitTHIS" ):
-                return visitor.visitTHIS(self)
+            if hasattr( visitor, "visitARRAYSEARCH" ):
+                return visitor.visitARRAYSEARCH(self)
             else:
                 return visitor.visitChildren(self)
 
 
-    class INTLITContext(ExpressionContext):
+    class BIOPContext(ExpressionContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def IntergerLiteral(self):
-            return self.getToken(MiniJavaParser.IntergerLiteral, 0)
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterINTLIT" ):
-                listener.enterINTLIT(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitINTLIT" ):
-                listener.exitINTLIT(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitINTLIT" ):
-                return visitor.visitINTLIT(self)
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
             else:
-                return visitor.visitChildren(self)
-
-
-
-    def expression(self):
-
-        localctx = MiniJavaParser.ExpressionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_expression)
-        self._la = 0 # Token type
-        try:
-            self.state = 141
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
-            if la_ == 1:
-                localctx = MiniJavaParser.TRUEFALSEContext(self, localctx)
-                self.enterOuterAlt(localctx, 1)
-                self.state = 112
-                localctx.BOOL = self._input.LT(1)
-                _la = self._input.LA(1)
-                if not(_la==MiniJavaParser.T__18 or _la==MiniJavaParser.T__19):
-                    localctx.BOOL = self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 113
-                self.expression2()
-                pass
-
-            elif la_ == 2:
-                localctx = MiniJavaParser.INTLITContext(self, localctx)
-                self.enterOuterAlt(localctx, 2)
-                self.state = 114
-                self.match(MiniJavaParser.IntergerLiteral)
-                self.state = 115
-                self.expression2()
-                pass
-
-            elif la_ == 3:
-                localctx = MiniJavaParser.VARContext(self, localctx)
-                self.enterOuterAlt(localctx, 3)
-                self.state = 116
-                self.match(MiniJavaParser.Identifier)
-                self.state = 117
-                self.expression2()
-                pass
-
-            elif la_ == 4:
-                localctx = MiniJavaParser.THISContext(self, localctx)
-                self.enterOuterAlt(localctx, 4)
-                self.state = 118
-                self.match(MiniJavaParser.T__20)
-                self.state = 119
-                self.expression2()
-                pass
-
-            elif la_ == 5:
-                localctx = MiniJavaParser.NEWINTContext(self, localctx)
-                self.enterOuterAlt(localctx, 5)
-                self.state = 120
-                self.match(MiniJavaParser.T__21)
-                self.state = 121
-                self.match(MiniJavaParser.T__16)
-                self.state = 122
-                self.match(MiniJavaParser.T__8)
-                self.state = 123
-                self.expression()
-                self.state = 124
-                self.match(MiniJavaParser.T__9)
-                self.state = 125
-                self.expression2()
-                pass
-
-            elif la_ == 6:
-                localctx = MiniJavaParser.NEWIDContext(self, localctx)
-                self.enterOuterAlt(localctx, 6)
-                self.state = 127
-                self.match(MiniJavaParser.T__21)
-                self.state = 128
-                self.match(MiniJavaParser.Identifier)
-                self.state = 129
-                self.match(MiniJavaParser.T__6)
-                self.state = 130
-                self.match(MiniJavaParser.T__10)
-                self.state = 131
-                self.expression2()
-                pass
-
-            elif la_ == 7:
-                localctx = MiniJavaParser.NOTContext(self, localctx)
-                self.enterOuterAlt(localctx, 7)
-                self.state = 132
-                self.match(MiniJavaParser.T__22)
-                self.state = 133
-                self.expression()
-                self.state = 134
-                self.expression2()
-                pass
-
-            elif la_ == 8:
-                localctx = MiniJavaParser.BRACKETContext(self, localctx)
-                self.enterOuterAlt(localctx, 8)
-                self.state = 136
-                self.match(MiniJavaParser.T__6)
-                self.state = 137
-                self.expression()
-                self.state = 138
-                self.match(MiniJavaParser.T__10)
-                self.state = 139
-                self.expression2()
-                pass
-
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class Expression2Context(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-
-        def getRuleIndex(self):
-            return MiniJavaParser.RULE_expression2
-
-     
-        def copyFrom(self, ctx:ParserRuleContext):
-            super().copyFrom(ctx)
-
-
-
-    class NULLContext(Expression2Context):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.Expression2Context
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNULL" ):
-                listener.enterNULL(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNULL" ):
-                listener.exitNULL(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNULL" ):
-                return visitor.visitNULL(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class SQUAREBRACKETContext(Expression2Context):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.Expression2Context
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expression(self):
-            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
-
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSQUAREBRACKET" ):
-                listener.enterSQUAREBRACKET(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSQUAREBRACKET" ):
-                listener.exitSQUAREBRACKET(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitSQUAREBRACKET" ):
-                return visitor.visitSQUAREBRACKET(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class LENGTHContext(Expression2Context):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.Expression2Context
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLENGTH" ):
-                listener.enterLENGTH(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLENGTH" ):
-                listener.exitLENGTH(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLENGTH" ):
-                return visitor.visitLENGTH(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class BIOPContext(Expression2Context):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.Expression2Context
-            super().__init__(parser)
-            self.op = None # Token
-            self.copyFrom(ctx)
-
-        def expression(self):
-            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
 
 
         def enterRule(self, listener:ParseTreeListener):
@@ -1251,16 +974,104 @@ class MiniJavaParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class FUNCTIONContext(Expression2Context):
+    class LENGTHContext(ExpressionContext):
 
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.Expression2Context
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def Identifier(self):
-            return self.getToken(MiniJavaParser.Identifier, 0)
-        def expression2(self):
-            return self.getTypedRuleContext(MiniJavaParser.Expression2Context,0)
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLENGTH" ):
+                listener.enterLENGTH(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLENGTH" ):
+                listener.exitLENGTH(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLENGTH" ):
+                return visitor.visitLENGTH(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class THISContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTHIS" ):
+                listener.enterTHIS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTHIS" ):
+                listener.exitTHIS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTHIS" ):
+                return visitor.visitTHIS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class BOOLLITContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBOOLLIT" ):
+                listener.enterBOOLLIT(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBOOLLIT" ):
+                listener.exitBOOLLIT(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBOOLLIT" ):
+                return visitor.visitBOOLLIT(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class INTLITContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def IntergerLiteral(self):
+            return self.getToken(MiniJavaParser.IntergerLiteral, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterINTLIT" ):
+                listener.enterINTLIT(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitINTLIT" ):
+                listener.exitINTLIT(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitINTLIT" ):
+                return visitor.visitINTLIT(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class FUNCTIONContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def expression(self, i:int=None):
             if i is None:
@@ -1268,6 +1079,8 @@ class MiniJavaParser ( Parser ):
             else:
                 return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
 
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFUNCTION" ):
@@ -1285,102 +1098,216 @@ class MiniJavaParser ( Parser ):
 
 
 
-    def expression2(self):
-
-        localctx = MiniJavaParser.Expression2Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_expression2)
+    def expression(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = MiniJavaParser.ExpressionContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 12
+        self.enterRecursionRule(localctx, 12, self.RULE_expression, _p)
         self._la = 0 # Token type
         try:
-            self.state = 169
+            self.enterOuterAlt(localctx, 1)
+            self.state = 131
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
-                localctx = MiniJavaParser.SQUAREBRACKETContext(self, localctx)
-                self.enterOuterAlt(localctx, 1)
-                self.state = 143
-                self.match(MiniJavaParser.T__8)
-                self.state = 144
-                self.expression()
-                self.state = 145
-                self.match(MiniJavaParser.T__9)
-                self.state = 146
-                self.expression2()
-                pass
+                localctx = MiniJavaParser.BOOLLITContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
 
-            elif la_ == 2:
-                localctx = MiniJavaParser.LENGTHContext(self, localctx)
-                self.enterOuterAlt(localctx, 2)
-                self.state = 148
-                self.match(MiniJavaParser.T__23)
-                self.state = 149
-                self.match(MiniJavaParser.T__24)
-                self.state = 150
-                self.expression2()
-                pass
-
-            elif la_ == 3:
-                localctx = MiniJavaParser.FUNCTIONContext(self, localctx)
-                self.enterOuterAlt(localctx, 3)
-                self.state = 151
-                self.match(MiniJavaParser.T__23)
-                self.state = 152
-                self.match(MiniJavaParser.Identifier)
-                self.state = 153
-                self.match(MiniJavaParser.T__6)
-                self.state = 162
-                self._errHandler.sync(self)
+                self.state = 111
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__18) | (1 << MiniJavaParser.T__19) | (1 << MiniJavaParser.T__20) | (1 << MiniJavaParser.T__21) | (1 << MiniJavaParser.T__22) | (1 << MiniJavaParser.IntergerLiteral) | (1 << MiniJavaParser.Identifier))) != 0):
-                    self.state = 154
-                    self.expression()
-                    self.state = 159
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    while _la==MiniJavaParser.T__14:
-                        self.state = 155
-                        self.match(MiniJavaParser.T__14)
-                        self.state = 156
-                        self.expression()
-                        self.state = 161
-                        self._errHandler.sync(self)
-                        _la = self._input.LA(1)
-
-
-
-                self.state = 164
-                self.match(MiniJavaParser.T__10)
-                self.state = 165
-                self.expression2()
-                pass
-
-            elif la_ == 4:
-                localctx = MiniJavaParser.BIOPContext(self, localctx)
-                self.enterOuterAlt(localctx, 4)
-                self.state = 166
-                localctx.op = self._input.LT(1)
-                _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.And) | (1 << MiniJavaParser.Mul) | (1 << MiniJavaParser.Less) | (1 << MiniJavaParser.Add) | (1 << MiniJavaParser.Min))) != 0)):
-                    localctx.op = self._errHandler.recoverInline(self)
+                if not(_la==MiniJavaParser.T__20 or _la==MiniJavaParser.T__21):
+                    self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 167
-                self.expression()
+                pass
+
+            elif la_ == 2:
+                localctx = MiniJavaParser.INTLITContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 112
+                self.match(MiniJavaParser.IntergerLiteral)
+                pass
+
+            elif la_ == 3:
+                localctx = MiniJavaParser.VARContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 113
+                self.match(MiniJavaParser.Identifier)
+                pass
+
+            elif la_ == 4:
+                localctx = MiniJavaParser.THISContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 114
+                self.match(MiniJavaParser.T__22)
                 pass
 
             elif la_ == 5:
-                localctx = MiniJavaParser.NULLContext(self, localctx)
-                self.enterOuterAlt(localctx, 5)
-
+                localctx = MiniJavaParser.NEWINTContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 115
+                self.match(MiniJavaParser.T__23)
+                self.state = 116
+                self.match(MiniJavaParser.T__16)
+                self.state = 117
+                self.match(MiniJavaParser.T__8)
+                self.state = 118
+                self.expression(0)
+                self.state = 119
+                self.match(MiniJavaParser.T__9)
                 pass
 
+            elif la_ == 6:
+                localctx = MiniJavaParser.NEWIDContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 121
+                self.match(MiniJavaParser.T__23)
+                self.state = 122
+                self.match(MiniJavaParser.Identifier)
+                self.state = 123
+                self.match(MiniJavaParser.T__6)
+                self.state = 124
+                self.match(MiniJavaParser.T__10)
+                pass
+
+            elif la_ == 7:
+                localctx = MiniJavaParser.NOTContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 125
+                self.match(MiniJavaParser.T__24)
+                self.state = 126
+                self.expression(2)
+                pass
+
+            elif la_ == 8:
+                localctx = MiniJavaParser.BRACKETContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 127
+                self.match(MiniJavaParser.T__6)
+                self.state = 128
+                self.expression(0)
+                self.state = 129
+                self.match(MiniJavaParser.T__10)
+                pass
+
+
+            self._ctx.stop = self._input.LT(-1)
+            self.state = 161
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    self.state = 159
+                    self._errHandler.sync(self)
+                    la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+                    if la_ == 1:
+                        localctx = MiniJavaParser.BIOPContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 133
+                        if not self.precpred(self._ctx, 9):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
+                        self.state = 134
+                        _la = self._input.LA(1)
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.And) | (1 << MiniJavaParser.Mul) | (1 << MiniJavaParser.Less) | (1 << MiniJavaParser.Add) | (1 << MiniJavaParser.Min))) != 0)):
+                            self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 135
+                        self.expression(10)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = MiniJavaParser.ARRAYSEARCHContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 136
+                        if not self.precpred(self._ctx, 12):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
+                        self.state = 137
+                        self.match(MiniJavaParser.T__8)
+                        self.state = 138
+                        self.expression(0)
+                        self.state = 139
+                        self.match(MiniJavaParser.T__9)
+                        pass
+
+                    elif la_ == 3:
+                        localctx = MiniJavaParser.LENGTHContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 141
+                        if not self.precpred(self._ctx, 11):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
+                        self.state = 142
+                        self.match(MiniJavaParser.T__18)
+                        self.state = 143
+                        self.match(MiniJavaParser.T__19)
+                        pass
+
+                    elif la_ == 4:
+                        localctx = MiniJavaParser.FUNCTIONContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 144
+                        if not self.precpred(self._ctx, 10):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
+                        self.state = 145
+                        self.match(MiniJavaParser.T__18)
+                        self.state = 146
+                        self.match(MiniJavaParser.Identifier)
+                        self.state = 147
+                        self.match(MiniJavaParser.T__6)
+                        self.state = 156
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__20) | (1 << MiniJavaParser.T__21) | (1 << MiniJavaParser.T__22) | (1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.IntergerLiteral) | (1 << MiniJavaParser.Identifier))) != 0):
+                            self.state = 148
+                            self.expression(0)
+                            self.state = 153
+                            self._errHandler.sync(self)
+                            _la = self._input.LA(1)
+                            while _la==MiniJavaParser.T__14:
+                                self.state = 149
+                                self.match(MiniJavaParser.T__14)
+                                self.state = 150
+                                self.expression(0)
+                                self.state = 155
+                                self._errHandler.sync(self)
+                                _la = self._input.LA(1)
+
+
+
+                        self.state = 158
+                        self.match(MiniJavaParser.T__10)
+                        pass
+
+             
+                self.state = 163
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
             self._errHandler.recover(self, re)
         finally:
-            self.exitRule()
+            self.unrollRecursionContexts(_parentctx)
         return localctx
 
     class StatementContext(ParserRuleContext):
@@ -1572,109 +1499,109 @@ class MiniJavaParser ( Parser ):
     def statement(self):
 
         localctx = MiniJavaParser.StatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_statement)
+        self.enterRule(localctx, 14, self.RULE_statement)
         self._la = 0 # Token type
         try:
-            self.state = 212
+            self.state = 205
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
                 localctx = MiniJavaParser.CURLYBRACKETContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 171
+                self.state = 164
                 self.match(MiniJavaParser.T__1)
-                self.state = 175
+                self.state = 168
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__1) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__27) | (1 << MiniJavaParser.T__28) | (1 << MiniJavaParser.Identifier))) != 0):
-                    self.state = 172
+                    self.state = 165
                     self.statement()
-                    self.state = 177
+                    self.state = 170
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 178
+                self.state = 171
                 self.match(MiniJavaParser.T__11)
                 pass
 
             elif la_ == 2:
                 localctx = MiniJavaParser.IFELSEContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 179
+                self.state = 172
                 self.match(MiniJavaParser.T__25)
-                self.state = 180
+                self.state = 173
                 self.match(MiniJavaParser.T__6)
-                self.state = 181
-                self.expression()
-                self.state = 182
+                self.state = 174
+                self.expression(0)
+                self.state = 175
                 self.match(MiniJavaParser.T__10)
-                self.state = 183
+                self.state = 176
                 self.statement()
-                self.state = 184
+                self.state = 177
                 self.match(MiniJavaParser.T__26)
-                self.state = 185
+                self.state = 178
                 self.statement()
                 pass
 
             elif la_ == 3:
                 localctx = MiniJavaParser.WHILEContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 187
+                self.state = 180
                 self.match(MiniJavaParser.T__27)
-                self.state = 188
+                self.state = 181
                 self.match(MiniJavaParser.T__6)
-                self.state = 189
-                self.expression()
-                self.state = 190
+                self.state = 182
+                self.expression(0)
+                self.state = 183
                 self.match(MiniJavaParser.T__10)
-                self.state = 191
+                self.state = 184
                 self.statement()
                 pass
 
             elif la_ == 4:
                 localctx = MiniJavaParser.PRINTContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 193
+                self.state = 186
                 self.match(MiniJavaParser.T__28)
-                self.state = 194
+                self.state = 187
                 self.match(MiniJavaParser.T__6)
-                self.state = 195
-                self.expression()
-                self.state = 196
+                self.state = 188
+                self.expression(0)
+                self.state = 189
                 self.match(MiniJavaParser.T__10)
-                self.state = 197
+                self.state = 190
                 self.match(MiniJavaParser.T__13)
                 pass
 
             elif la_ == 5:
                 localctx = MiniJavaParser.ASSIGNContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
-                self.state = 199
+                self.state = 192
                 self.match(MiniJavaParser.Identifier)
-                self.state = 200
+                self.state = 193
                 self.match(MiniJavaParser.T__29)
-                self.state = 201
-                self.expression()
-                self.state = 202
+                self.state = 194
+                self.expression(0)
+                self.state = 195
                 self.match(MiniJavaParser.T__13)
                 pass
 
             elif la_ == 6:
                 localctx = MiniJavaParser.ARRAYASSIGNContext(self, localctx)
                 self.enterOuterAlt(localctx, 6)
-                self.state = 204
+                self.state = 197
                 self.match(MiniJavaParser.Identifier)
-                self.state = 205
+                self.state = 198
                 self.match(MiniJavaParser.T__8)
-                self.state = 206
-                self.expression()
-                self.state = 207
+                self.state = 199
+                self.expression(0)
+                self.state = 200
                 self.match(MiniJavaParser.T__9)
-                self.state = 208
+                self.state = 201
                 self.match(MiniJavaParser.T__29)
-                self.state = 209
-                self.expression()
-                self.state = 210
+                self.state = 202
+                self.expression(0)
+                self.state = 203
                 self.match(MiniJavaParser.T__13)
                 pass
 
@@ -1687,6 +1614,34 @@ class MiniJavaParser ( Parser ):
             self.exitRule()
         return localctx
 
+
+
+    def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
+        if self._predicates == None:
+            self._predicates = dict()
+        self._predicates[6] = self.expression_sempred
+        pred = self._predicates.get(ruleIndex, None)
+        if pred is None:
+            raise Exception("No predicate with index:" + str(ruleIndex))
+        else:
+            return pred(localctx, predIndex)
+
+    def expression_sempred(self, localctx:ExpressionContext, predIndex:int):
+            if predIndex == 0:
+                return self.precpred(self._ctx, 9)
+         
+
+            if predIndex == 1:
+                return self.precpred(self._ctx, 12)
+         
+
+            if predIndex == 2:
+                return self.precpred(self._ctx, 11)
+         
+
+            if predIndex == 3:
+                return self.precpred(self._ctx, 10)
+         
 
 
 

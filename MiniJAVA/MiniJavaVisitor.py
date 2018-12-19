@@ -54,33 +54,13 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#TRUEFALSE.
-    def visitTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#INTLIT.
-    def visitINTLIT(self, ctx:MiniJavaParser.INTLITContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#VAR.
-    def visitVAR(self, ctx:MiniJavaParser.VARContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#THIS.
-    def visitTHIS(self, ctx:MiniJavaParser.THISContext):
+    # Visit a parse tree produced by MiniJavaParser#NEWID.
+    def visitNEWID(self, ctx:MiniJavaParser.NEWIDContext):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by MiniJavaParser#NEWINT.
     def visitNEWINT(self, ctx:MiniJavaParser.NEWINTContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#NEWID.
-    def visitNEWID(self, ctx:MiniJavaParser.NEWIDContext):
         return self.visitChildren(ctx)
 
 
@@ -94,18 +74,13 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#SQUAREBRACKET.
-    def visitSQUAREBRACKET(self, ctx:MiniJavaParser.SQUAREBRACKETContext):
+    # Visit a parse tree produced by MiniJavaParser#VAR.
+    def visitVAR(self, ctx:MiniJavaParser.VARContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#LENGTH.
-    def visitLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#FUNCTION.
-    def visitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
+    # Visit a parse tree produced by MiniJavaParser#ARRAYSEARCH.
+    def visitARRAYSEARCH(self, ctx:MiniJavaParser.ARRAYSEARCHContext):
         return self.visitChildren(ctx)
 
 
@@ -114,8 +89,28 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#NULL.
-    def visitNULL(self, ctx:MiniJavaParser.NULLContext):
+    # Visit a parse tree produced by MiniJavaParser#LENGTH.
+    def visitLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#THIS.
+    def visitTHIS(self, ctx:MiniJavaParser.THISContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#BOOLLIT.
+    def visitBOOLLIT(self, ctx:MiniJavaParser.BOOLLITContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#INTLIT.
+    def visitINTLIT(self, ctx:MiniJavaParser.INTLITContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#FUNCTION.
+    def visitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
         return self.visitChildren(ctx)
 
 
