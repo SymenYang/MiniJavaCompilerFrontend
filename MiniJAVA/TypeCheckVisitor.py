@@ -47,6 +47,52 @@ class TypeCheckVisitor(MiniJavaVisitor):
         self.methodVars[varname] = vartype
         return
 
+    def DealSucExpression2(self,Type,reType,ctx):
+        '''
+        返回这个表达式的类型
+        Type = 'ClassName' or INT INTARR BOOL
+        '''
+        if Type == 'None' or reType == 'None':
+            return 'None'
+        if Type in self.ClassNames:
+            # Type is class
+            if reType[0] == 'NULL':
+                return Type
+            elif reType[0] == 'FUNCTION':
+                functionName = reType[1]
+                functionCite = ''
+                for i in range(2,len(reType)):
+                    functionCite = functionCite + reType[i]
+                VarClassParam = self.ClassParam[Type]
+                if (functionName,functionCite) in VarClassParam.Funcs:
+                    # funcs type: {(FuncName,FuncCite) : [ClassName(May be parent),ReturnType,(ParamName,ParamType)*]}
+                    return VarClassParam.Funcs[(functionName,functionCite)][1]
+                else:
+                    # 调用的函数未定义
+                    print('调用的函数未定义')
+                    return 'None'
+            else:
+                # 类后接非法操作
+                print('类后接非法操作')
+                return 'None'
+        else:
+            if reType[0] == 'NULL':
+                return Type
+            if reType[0] == 'SQUAREBRAKET':
+                if Type == 'INTARR':
+                    if reType[1] != 'INT':
+                        # 下标不是整数
+                        print('下标不是整数')
+                        return 'None'
+                    else:
+                        return 'INT'
+                else:
+                    # 对非数组使用下标访问
+                    print('对非数组使用下标访问')
+                    return 'None'
+            return 'None'
+
+
     # Visit a parse tree produced by MiniJavaParser#TRUEFALSE.
     def visitTRUEFALSE(self, ctx:MiniJavaParser.TRUEFALSEContext):
         reType = self.visit(ctx.expression2())
@@ -243,6 +289,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
                 return 'None'
             if reType[0] == 'NUll':
                 return Id
+            # 对定义的类寻找函数
             functionName = reType[1]
             functionCite = ''
             for i in range(2,len(reType)):
