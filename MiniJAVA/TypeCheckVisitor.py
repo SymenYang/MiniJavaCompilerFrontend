@@ -21,6 +21,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         self.nowClass = ''
         self.HasError = False
     
+
     def visitClassDeclaration(self, ctx:MiniJavaParser.ClassDeclarationContext):
         self.classVars = {}
         self.nowClass = str(ctx.Identifier(0))

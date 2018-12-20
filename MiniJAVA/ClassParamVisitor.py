@@ -64,6 +64,7 @@ class ClassParamVisitor(MiniJavaVisitor):
         self.nowClass = ''
         self.HasError = False
     
+
     def visitGoal(self,ctx:MiniJavaParser.GoalContext):
         if self.HasError:
             return

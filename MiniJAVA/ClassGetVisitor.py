@@ -36,7 +36,7 @@ class ClassGetVisitor(MiniJavaVisitor):
             typeList.append((str(IDs[i]),self.visit(ctx.atype(i + 1))))
             nameID.append(self.visit(ctx.atype(i + 1)))
         nameID = tuple(nameID)
-        self.FuncTable[(self.nowClass,str(ctx.Identifier()[0]),nameID)] = typeList
+        self.FuncTable[(self.nowClass,str(ctx.Identifier()[0]),nameID)] = typeList + [ctx]
     
     def visitINTARRAY(self,ctx:MiniJavaParser.INTARRAYContext):
         return 'INTARR'

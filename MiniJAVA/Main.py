@@ -8,6 +8,7 @@ from MiniJavaVisitor   import MiniJavaVisitor
 from ClassGetVisitor import ClassGetVisitor
 from ClassParamVisitor import ClassParamVisitor
 from TypeCheckVisitor import TypeCheckVisitor
+from Interpreter import Interpreter
 
 def mainFunc(argv):
     input = FileStream(argv[1])
@@ -19,6 +20,7 @@ def mainFunc(argv):
     v.visit(tree)
     ClassParam = ClassParamVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
     ClassParam.visit(tree)
+    print(ClassParam.Classes['Fac'].Funcs)
     if ClassParam.HasError:
         return
     TypeChecker = TypeCheckVisitor(v.ClassTable,ClassParam.Classes)
