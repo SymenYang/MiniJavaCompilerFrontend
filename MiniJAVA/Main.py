@@ -20,7 +20,6 @@ def mainFunc(argv):
     v.visit(tree)
     ClassParam = ClassParamVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
     ClassParam.visit(tree)
-    print(ClassParam.Classes['Fac'].Funcs)
     if ClassParam.HasError:
         return
     TypeChecker = TypeCheckVisitor(v.ClassTable,ClassParam.Classes)
@@ -28,6 +27,8 @@ def mainFunc(argv):
     if TypeChecker.HasError:
         return
     print('success')
+    Intrprtr = Interpreter(ClassParam.Classes,v.ClassTable)
+    Intrprtr.visit(tree)
 
 if __name__ == '__main__':
     mainFunc(sys.argv)

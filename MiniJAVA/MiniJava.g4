@@ -68,7 +68,8 @@ Mul : '*' ;
 Less : '<' ;
 Add : '+' ;
 Min : '-' ;
-
+TRUE : 'true' ;
+FALSE : 'false' ;
 /*
 class Factorial{
     public static void main(String[] a){

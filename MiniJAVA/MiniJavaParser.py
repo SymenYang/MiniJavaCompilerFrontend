@@ -26,72 +26,72 @@ def serializedATN():
         buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
         buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
         buf.write("\3\t\5\t\u00d0\n\t\3\t\2\3\16\n\2\4\6\b\n\f\16\20\2\4")
-        buf.write("\3\2\27\30\3\2&*\2\u00e7\2\22\3\2\2\2\4\31\3\2\2\2\6+")
-        buf.write("\3\2\2\2\b@\3\2\2\2\nD\3\2\2\2\fn\3\2\2\2\16\u0085\3\2")
-        buf.write("\2\2\20\u00cf\3\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23")
-        buf.write("\3\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27")
-        buf.write("\3\3\2\2\2\30\26\3\2\2\2\31\32\7\3\2\2\32\33\7\"\2\2\33")
-        buf.write("\34\7\4\2\2\34\35\7\5\2\2\35\36\7\6\2\2\36\37\7\7\2\2")
-        buf.write("\37 \7\b\2\2 !\7\t\2\2!\"\7\n\2\2\"#\7\13\2\2#$\7\f\2")
-        buf.write("\2$%\7\"\2\2%&\7\r\2\2&\'\7\4\2\2\'(\5\20\t\2()\7\16\2")
-        buf.write("\2)*\7\16\2\2*\5\3\2\2\2+,\7\3\2\2,/\7\"\2\2-.\7\17\2")
-        buf.write("\2.\60\7\"\2\2/-\3\2\2\2/\60\3\2\2\2\60\61\3\2\2\2\61")
-        buf.write("\65\7\4\2\2\62\64\5\b\5\2\63\62\3\2\2\2\64\67\3\2\2\2")
-        buf.write("\65\63\3\2\2\2\65\66\3\2\2\2\66;\3\2\2\2\67\65\3\2\2\2")
-        buf.write("8:\5\n\6\298\3\2\2\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2<>\3")
-        buf.write("\2\2\2=;\3\2\2\2>?\7\16\2\2?\7\3\2\2\2@A\5\f\7\2AB\7\"")
-        buf.write("\2\2BC\7\20\2\2C\t\3\2\2\2DE\7\5\2\2EF\5\f\7\2FG\7\"\2")
-        buf.write("\2GS\7\t\2\2HI\5\f\7\2IP\7\"\2\2JK\7\21\2\2KL\5\f\7\2")
-        buf.write("LM\7\"\2\2MO\3\2\2\2NJ\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3")
-        buf.write("\2\2\2QT\3\2\2\2RP\3\2\2\2SH\3\2\2\2ST\3\2\2\2TU\3\2\2")
-        buf.write("\2UV\7\r\2\2VZ\7\4\2\2WY\5\b\5\2XW\3\2\2\2Y\\\3\2\2\2")
-        buf.write("ZX\3\2\2\2Z[\3\2\2\2[`\3\2\2\2\\Z\3\2\2\2]_\5\20\t\2^")
-        buf.write("]\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ac\3\2\2\2b`\3")
-        buf.write("\2\2\2cd\7\22\2\2de\5\16\b\2ef\7\20\2\2fg\7\16\2\2g\13")
-        buf.write("\3\2\2\2hi\7\23\2\2ij\7\13\2\2jo\7\f\2\2ko\7\24\2\2lo")
-        buf.write("\7\23\2\2mo\7\"\2\2nh\3\2\2\2nk\3\2\2\2nl\3\2\2\2nm\3")
-        buf.write("\2\2\2o\r\3\2\2\2pq\b\b\1\2q\u0086\t\2\2\2r\u0086\7!\2")
-        buf.write("\2s\u0086\7\"\2\2t\u0086\7\31\2\2uv\7\32\2\2vw\7\23\2")
-        buf.write("\2wx\7\13\2\2xy\5\16\b\2yz\7\f\2\2z\u0086\3\2\2\2{|\7")
-        buf.write("\32\2\2|}\7\"\2\2}~\7\t\2\2~\u0086\7\r\2\2\177\u0080\7")
-        buf.write("\33\2\2\u0080\u0086\5\16\b\4\u0081\u0082\7\t\2\2\u0082")
-        buf.write("\u0083\5\16\b\2\u0083\u0084\7\r\2\2\u0084\u0086\3\2\2")
-        buf.write("\2\u0085p\3\2\2\2\u0085r\3\2\2\2\u0085s\3\2\2\2\u0085")
-        buf.write("t\3\2\2\2\u0085u\3\2\2\2\u0085{\3\2\2\2\u0085\177\3\2")
-        buf.write("\2\2\u0085\u0081\3\2\2\2\u0086\u00a3\3\2\2\2\u0087\u0088")
-        buf.write("\f\13\2\2\u0088\u0089\t\3\2\2\u0089\u00a2\5\16\b\f\u008a")
-        buf.write("\u008b\f\16\2\2\u008b\u008c\7\13\2\2\u008c\u008d\5\16")
-        buf.write("\b\2\u008d\u008e\7\f\2\2\u008e\u00a2\3\2\2\2\u008f\u0090")
-        buf.write("\f\r\2\2\u0090\u0091\7\25\2\2\u0091\u00a2\7\26\2\2\u0092")
-        buf.write("\u0093\f\f\2\2\u0093\u0094\7\25\2\2\u0094\u0095\7\"\2")
-        buf.write("\2\u0095\u009e\7\t\2\2\u0096\u009b\5\16\b\2\u0097\u0098")
-        buf.write("\7\21\2\2\u0098\u009a\5\16\b\2\u0099\u0097\3\2\2\2\u009a")
-        buf.write("\u009d\3\2\2\2\u009b\u0099\3\2\2\2\u009b\u009c\3\2\2\2")
-        buf.write("\u009c\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009e\u0096\3")
-        buf.write("\2\2\2\u009e\u009f\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\u00a2")
-        buf.write("\7\r\2\2\u00a1\u0087\3\2\2\2\u00a1\u008a\3\2\2\2\u00a1")
-        buf.write("\u008f\3\2\2\2\u00a1\u0092\3\2\2\2\u00a2\u00a5\3\2\2\2")
-        buf.write("\u00a3\u00a1\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\17\3\2")
-        buf.write("\2\2\u00a5\u00a3\3\2\2\2\u00a6\u00aa\7\4\2\2\u00a7\u00a9")
-        buf.write("\5\20\t\2\u00a8\u00a7\3\2\2\2\u00a9\u00ac\3\2\2\2\u00aa")
-        buf.write("\u00a8\3\2\2\2\u00aa\u00ab\3\2\2\2\u00ab\u00ad\3\2\2\2")
-        buf.write("\u00ac\u00aa\3\2\2\2\u00ad\u00d0\7\16\2\2\u00ae\u00af")
-        buf.write("\7\34\2\2\u00af\u00b0\7\t\2\2\u00b0\u00b1\5\16\b\2\u00b1")
-        buf.write("\u00b2\7\r\2\2\u00b2\u00b3\5\20\t\2\u00b3\u00b4\7\35\2")
-        buf.write("\2\u00b4\u00b5\5\20\t\2\u00b5\u00d0\3\2\2\2\u00b6\u00b7")
-        buf.write("\7\36\2\2\u00b7\u00b8\7\t\2\2\u00b8\u00b9\5\16\b\2\u00b9")
-        buf.write("\u00ba\7\r\2\2\u00ba\u00bb\5\20\t\2\u00bb\u00d0\3\2\2")
-        buf.write("\2\u00bc\u00bd\7\37\2\2\u00bd\u00be\7\t\2\2\u00be\u00bf")
-        buf.write("\5\16\b\2\u00bf\u00c0\7\r\2\2\u00c0\u00c1\7\20\2\2\u00c1")
-        buf.write("\u00d0\3\2\2\2\u00c2\u00c3\7\"\2\2\u00c3\u00c4\7 \2\2")
-        buf.write("\u00c4\u00c5\5\16\b\2\u00c5\u00c6\7\20\2\2\u00c6\u00d0")
-        buf.write("\3\2\2\2\u00c7\u00c8\7\"\2\2\u00c8\u00c9\7\13\2\2\u00c9")
-        buf.write("\u00ca\5\16\b\2\u00ca\u00cb\7\f\2\2\u00cb\u00cc\7 \2\2")
-        buf.write("\u00cc\u00cd\5\16\b\2\u00cd\u00ce\7\20\2\2\u00ce\u00d0")
-        buf.write("\3\2\2\2\u00cf\u00a6\3\2\2\2\u00cf\u00ae\3\2\2\2\u00cf")
-        buf.write("\u00b6\3\2\2\2\u00cf\u00bc\3\2\2\2\u00cf\u00c2\3\2\2\2")
-        buf.write("\u00cf\u00c7\3\2\2\2\u00d0\21\3\2\2\2\22\26/\65;PSZ`n")
-        buf.write("\u0085\u009b\u009e\u00a1\u00a3\u00aa\u00cf")
+        buf.write("\3\2)*\3\2$(\2\u00e7\2\22\3\2\2\2\4\31\3\2\2\2\6+\3\2")
+        buf.write("\2\2\b@\3\2\2\2\nD\3\2\2\2\fn\3\2\2\2\16\u0085\3\2\2\2")
+        buf.write("\20\u00cf\3\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23\3")
+        buf.write("\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\3")
+        buf.write("\3\2\2\2\30\26\3\2\2\2\31\32\7\3\2\2\32\33\7 \2\2\33\34")
+        buf.write("\7\4\2\2\34\35\7\5\2\2\35\36\7\6\2\2\36\37\7\7\2\2\37")
+        buf.write(" \7\b\2\2 !\7\t\2\2!\"\7\n\2\2\"#\7\13\2\2#$\7\f\2\2$")
+        buf.write("%\7 \2\2%&\7\r\2\2&\'\7\4\2\2\'(\5\20\t\2()\7\16\2\2)")
+        buf.write("*\7\16\2\2*\5\3\2\2\2+,\7\3\2\2,/\7 \2\2-.\7\17\2\2.\60")
+        buf.write("\7 \2\2/-\3\2\2\2/\60\3\2\2\2\60\61\3\2\2\2\61\65\7\4")
+        buf.write("\2\2\62\64\5\b\5\2\63\62\3\2\2\2\64\67\3\2\2\2\65\63\3")
+        buf.write("\2\2\2\65\66\3\2\2\2\66;\3\2\2\2\67\65\3\2\2\28:\5\n\6")
+        buf.write("\298\3\2\2\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2<>\3\2\2\2=")
+        buf.write(";\3\2\2\2>?\7\16\2\2?\7\3\2\2\2@A\5\f\7\2AB\7 \2\2BC\7")
+        buf.write("\20\2\2C\t\3\2\2\2DE\7\5\2\2EF\5\f\7\2FG\7 \2\2GS\7\t")
+        buf.write("\2\2HI\5\f\7\2IP\7 \2\2JK\7\21\2\2KL\5\f\7\2LM\7 \2\2")
+        buf.write("MO\3\2\2\2NJ\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QT\3")
+        buf.write("\2\2\2RP\3\2\2\2SH\3\2\2\2ST\3\2\2\2TU\3\2\2\2UV\7\r\2")
+        buf.write("\2VZ\7\4\2\2WY\5\b\5\2XW\3\2\2\2Y\\\3\2\2\2ZX\3\2\2\2")
+        buf.write("Z[\3\2\2\2[`\3\2\2\2\\Z\3\2\2\2]_\5\20\t\2^]\3\2\2\2_")
+        buf.write("b\3\2\2\2`^\3\2\2\2`a\3\2\2\2ac\3\2\2\2b`\3\2\2\2cd\7")
+        buf.write("\22\2\2de\5\16\b\2ef\7\20\2\2fg\7\16\2\2g\13\3\2\2\2h")
+        buf.write("i\7\23\2\2ij\7\13\2\2jo\7\f\2\2ko\7\24\2\2lo\7\23\2\2")
+        buf.write("mo\7 \2\2nh\3\2\2\2nk\3\2\2\2nl\3\2\2\2nm\3\2\2\2o\r\3")
+        buf.write("\2\2\2pq\b\b\1\2q\u0086\t\2\2\2r\u0086\7\37\2\2s\u0086")
+        buf.write("\7 \2\2t\u0086\7\27\2\2uv\7\30\2\2vw\7\23\2\2wx\7\13\2")
+        buf.write("\2xy\5\16\b\2yz\7\f\2\2z\u0086\3\2\2\2{|\7\30\2\2|}\7")
+        buf.write(" \2\2}~\7\t\2\2~\u0086\7\r\2\2\177\u0080\7\31\2\2\u0080")
+        buf.write("\u0086\5\16\b\4\u0081\u0082\7\t\2\2\u0082\u0083\5\16\b")
+        buf.write("\2\u0083\u0084\7\r\2\2\u0084\u0086\3\2\2\2\u0085p\3\2")
+        buf.write("\2\2\u0085r\3\2\2\2\u0085s\3\2\2\2\u0085t\3\2\2\2\u0085")
+        buf.write("u\3\2\2\2\u0085{\3\2\2\2\u0085\177\3\2\2\2\u0085\u0081")
+        buf.write("\3\2\2\2\u0086\u00a3\3\2\2\2\u0087\u0088\f\13\2\2\u0088")
+        buf.write("\u0089\t\3\2\2\u0089\u00a2\5\16\b\f\u008a\u008b\f\16\2")
+        buf.write("\2\u008b\u008c\7\13\2\2\u008c\u008d\5\16\b\2\u008d\u008e")
+        buf.write("\7\f\2\2\u008e\u00a2\3\2\2\2\u008f\u0090\f\r\2\2\u0090")
+        buf.write("\u0091\7\25\2\2\u0091\u00a2\7\26\2\2\u0092\u0093\f\f\2")
+        buf.write("\2\u0093\u0094\7\25\2\2\u0094\u0095\7 \2\2\u0095\u009e")
+        buf.write("\7\t\2\2\u0096\u009b\5\16\b\2\u0097\u0098\7\21\2\2\u0098")
+        buf.write("\u009a\5\16\b\2\u0099\u0097\3\2\2\2\u009a\u009d\3\2\2")
+        buf.write("\2\u009b\u0099\3\2\2\2\u009b\u009c\3\2\2\2\u009c\u009f")
+        buf.write("\3\2\2\2\u009d\u009b\3\2\2\2\u009e\u0096\3\2\2\2\u009e")
+        buf.write("\u009f\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\u00a2\7\r\2\2")
+        buf.write("\u00a1\u0087\3\2\2\2\u00a1\u008a\3\2\2\2\u00a1\u008f\3")
+        buf.write("\2\2\2\u00a1\u0092\3\2\2\2\u00a2\u00a5\3\2\2\2\u00a3\u00a1")
+        buf.write("\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\17\3\2\2\2\u00a5\u00a3")
+        buf.write("\3\2\2\2\u00a6\u00aa\7\4\2\2\u00a7\u00a9\5\20\t\2\u00a8")
+        buf.write("\u00a7\3\2\2\2\u00a9\u00ac\3\2\2\2\u00aa\u00a8\3\2\2\2")
+        buf.write("\u00aa\u00ab\3\2\2\2\u00ab\u00ad\3\2\2\2\u00ac\u00aa\3")
+        buf.write("\2\2\2\u00ad\u00d0\7\16\2\2\u00ae\u00af\7\32\2\2\u00af")
+        buf.write("\u00b0\7\t\2\2\u00b0\u00b1\5\16\b\2\u00b1\u00b2\7\r\2")
+        buf.write("\2\u00b2\u00b3\5\20\t\2\u00b3\u00b4\7\33\2\2\u00b4\u00b5")
+        buf.write("\5\20\t\2\u00b5\u00d0\3\2\2\2\u00b6\u00b7\7\34\2\2\u00b7")
+        buf.write("\u00b8\7\t\2\2\u00b8\u00b9\5\16\b\2\u00b9\u00ba\7\r\2")
+        buf.write("\2\u00ba\u00bb\5\20\t\2\u00bb\u00d0\3\2\2\2\u00bc\u00bd")
+        buf.write("\7\35\2\2\u00bd\u00be\7\t\2\2\u00be\u00bf\5\16\b\2\u00bf")
+        buf.write("\u00c0\7\r\2\2\u00c0\u00c1\7\20\2\2\u00c1\u00d0\3\2\2")
+        buf.write("\2\u00c2\u00c3\7 \2\2\u00c3\u00c4\7\36\2\2\u00c4\u00c5")
+        buf.write("\5\16\b\2\u00c5\u00c6\7\20\2\2\u00c6\u00d0\3\2\2\2\u00c7")
+        buf.write("\u00c8\7 \2\2\u00c8\u00c9\7\13\2\2\u00c9\u00ca\5\16\b")
+        buf.write("\2\u00ca\u00cb\7\f\2\2\u00cb\u00cc\7\36\2\2\u00cc\u00cd")
+        buf.write("\5\16\b\2\u00cd\u00ce\7\20\2\2\u00ce\u00d0\3\2\2\2\u00cf")
+        buf.write("\u00a6\3\2\2\2\u00cf\u00ae\3\2\2\2\u00cf\u00b6\3\2\2\2")
+        buf.write("\u00cf\u00bc\3\2\2\2\u00cf\u00c2\3\2\2\2\u00cf\u00c7\3")
+        buf.write("\2\2\2\u00d0\21\3\2\2\2\22\26/\65;PSZ`n\u0085\u009b\u009e")
+        buf.write("\u00a1\u00a3\u00aa\u00cf")
         return buf.getvalue()
 
 
@@ -108,11 +108,11 @@ class MiniJavaParser ( Parser ):
     literalNames = [ "<INVALID>", "'class'", "'{'", "'public'", "'static'", 
                      "'void'", "'main'", "'('", "'String'", "'['", "']'", 
                      "')'", "'}'", "'extends'", "';'", "','", "'return'", 
-                     "'int'", "'boolean'", "'.'", "'length'", "'true'", 
-                     "'false'", "'this'", "'new'", "'!'", "'if'", "'else'", 
-                     "'while'", "'System.out.println'", "'='", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'&&'", "'*'", "'<'", "'+'", "'-'" ]
+                     "'int'", "'boolean'", "'.'", "'length'", "'this'", 
+                     "'new'", "'!'", "'if'", "'else'", "'while'", "'System.out.println'", 
+                     "'='", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "'&&'", "'*'", "'<'", "'+'", "'-'", "'true'", 
+                     "'false'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -121,9 +121,9 @@ class MiniJavaParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "IntergerLiteral", 
-                      "Identifier", "WS", "Comment", "LineComment", "And", 
-                      "Mul", "Less", "Add", "Min" ]
+                      "<INVALID>", "IntergerLiteral", "Identifier", "WS", 
+                      "Comment", "LineComment", "And", "Mul", "Less", "Add", 
+                      "Min", "TRUE", "FALSE" ]
 
     RULE_goal = 0
     RULE_mainClass = 1
@@ -166,18 +166,18 @@ class MiniJavaParser ( Parser ):
     T__25=26
     T__26=27
     T__27=28
-    T__28=29
-    T__29=30
-    IntergerLiteral=31
-    Identifier=32
-    WS=33
-    Comment=34
-    LineComment=35
-    And=36
-    Mul=37
-    Less=38
-    Add=39
-    Min=40
+    IntergerLiteral=29
+    Identifier=30
+    WS=31
+    Comment=32
+    LineComment=33
+    And=34
+    Mul=35
+    Less=36
+    Add=37
+    Min=38
+    TRUE=39
+    FALSE=40
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -601,7 +601,7 @@ class MiniJavaParser ( Parser ):
             self.state = 94
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__1) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__27) | (1 << MiniJavaParser.T__28) | (1 << MiniJavaParser.Identifier))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__1) | (1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.Identifier))) != 0):
                 self.state = 91
                 self.statement()
                 self.state = 96
@@ -1121,7 +1121,7 @@ class MiniJavaParser ( Parser ):
                 self.state = 111
                 localctx.BOOL = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not(_la==MiniJavaParser.T__20 or _la==MiniJavaParser.T__21):
+                if not(_la==MiniJavaParser.TRUE or _la==MiniJavaParser.FALSE):
                     localctx.BOOL = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -1149,7 +1149,7 @@ class MiniJavaParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 114
-                self.match(MiniJavaParser.T__22)
+                self.match(MiniJavaParser.T__20)
                 pass
 
             elif la_ == 5:
@@ -1157,7 +1157,7 @@ class MiniJavaParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 115
-                self.match(MiniJavaParser.T__23)
+                self.match(MiniJavaParser.T__21)
                 self.state = 116
                 self.match(MiniJavaParser.T__16)
                 self.state = 117
@@ -1173,7 +1173,7 @@ class MiniJavaParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 121
-                self.match(MiniJavaParser.T__23)
+                self.match(MiniJavaParser.T__21)
                 self.state = 122
                 self.match(MiniJavaParser.Identifier)
                 self.state = 123
@@ -1187,7 +1187,7 @@ class MiniJavaParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 125
-                self.match(MiniJavaParser.T__24)
+                self.match(MiniJavaParser.T__22)
                 self.state = 126
                 self.expression(2)
                 pass
@@ -1280,7 +1280,7 @@ class MiniJavaParser ( Parser ):
                         self.state = 156
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__20) | (1 << MiniJavaParser.T__21) | (1 << MiniJavaParser.T__22) | (1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.IntergerLiteral) | (1 << MiniJavaParser.Identifier))) != 0):
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__20) | (1 << MiniJavaParser.T__21) | (1 << MiniJavaParser.T__22) | (1 << MiniJavaParser.IntergerLiteral) | (1 << MiniJavaParser.Identifier) | (1 << MiniJavaParser.TRUE) | (1 << MiniJavaParser.FALSE))) != 0):
                             self.state = 148
                             self.expression(0)
                             self.state = 153
@@ -1517,7 +1517,7 @@ class MiniJavaParser ( Parser ):
                 self.state = 168
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__1) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__27) | (1 << MiniJavaParser.T__28) | (1 << MiniJavaParser.Identifier))) != 0):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__1) | (1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.Identifier))) != 0):
                     self.state = 165
                     self.statement()
                     self.state = 170
@@ -1532,7 +1532,7 @@ class MiniJavaParser ( Parser ):
                 localctx = MiniJavaParser.IFELSEContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 172
-                self.match(MiniJavaParser.T__25)
+                self.match(MiniJavaParser.T__23)
                 self.state = 173
                 self.match(MiniJavaParser.T__6)
                 self.state = 174
@@ -1542,7 +1542,7 @@ class MiniJavaParser ( Parser ):
                 self.state = 176
                 self.statement()
                 self.state = 177
-                self.match(MiniJavaParser.T__26)
+                self.match(MiniJavaParser.T__24)
                 self.state = 178
                 self.statement()
                 pass
@@ -1551,7 +1551,7 @@ class MiniJavaParser ( Parser ):
                 localctx = MiniJavaParser.WHILEContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 180
-                self.match(MiniJavaParser.T__27)
+                self.match(MiniJavaParser.T__25)
                 self.state = 181
                 self.match(MiniJavaParser.T__6)
                 self.state = 182
@@ -1566,7 +1566,7 @@ class MiniJavaParser ( Parser ):
                 localctx = MiniJavaParser.PRINTContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
                 self.state = 186
-                self.match(MiniJavaParser.T__28)
+                self.match(MiniJavaParser.T__26)
                 self.state = 187
                 self.match(MiniJavaParser.T__6)
                 self.state = 188
@@ -1583,7 +1583,7 @@ class MiniJavaParser ( Parser ):
                 self.state = 192
                 self.match(MiniJavaParser.Identifier)
                 self.state = 193
-                self.match(MiniJavaParser.T__29)
+                self.match(MiniJavaParser.T__27)
                 self.state = 194
                 self.expression(0)
                 self.state = 195
@@ -1602,7 +1602,7 @@ class MiniJavaParser ( Parser ):
                 self.state = 200
                 self.match(MiniJavaParser.T__9)
                 self.state = 201
-                self.match(MiniJavaParser.T__29)
+                self.match(MiniJavaParser.T__27)
                 self.state = 202
                 self.expression(0)
                 self.state = 203
