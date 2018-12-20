@@ -373,7 +373,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
 
     # return type string
     def visitINTARRAY(self,ctx:MiniJavaParser.INTARRAYContext):
-        return 'INTARR'
+        return 'INTARRAY'
     
     def visitBOOL(self, ctx:MiniJavaParser.BOOLContext):
         return 'BOOL'

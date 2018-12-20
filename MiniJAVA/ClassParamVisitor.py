@@ -3,7 +3,7 @@ from MiniJavaVisitor   import MiniJavaVisitor
 from MiniJavaParser import MiniJavaParser
 
 class ClassParam:
-    def __init__(self,FuncTable,ParentTable,ClassName):
+    def __init__(self,FuncTable,ParentTable,ClassTable,ClassName):
         '''
         self.Funcs type: {(funcName,funcStr):[returnType,(param name,param type)* ]}
         self.Vars type: { varName : varType}
@@ -17,7 +17,7 @@ class ClassParam:
             return
         parent = ParentTable[ClassName]
         while (parent != 'None'):
-            if not parent in ClassName:
+            if not parent in ClassTable:
                 print(self.name + '类，继承自未定义类：' + parent)
                 self.HasError = True
                 return
@@ -57,7 +57,7 @@ class ClassParamVisitor(MiniJavaVisitor):
         self.Classes = {}
         self.ParentTable = ParentTable
         for className in ClassTable:
-            self.Classes[className] = ClassParam(FuncTable,ParentTable,className)
+            self.Classes[className] = ClassParam(FuncTable,ParentTable,ClassTable,className)
             if self.Classes[className].HasError:
                 self.HasError = True
                 return
