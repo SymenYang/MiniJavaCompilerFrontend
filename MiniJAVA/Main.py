@@ -1,14 +1,12 @@
 import sys
 
 from antlr4 import *
-
 from MiniJavaLexer    import MiniJavaLexer   
 from MiniJavaListener import MiniJavaListener
 from MiniJavaParser   import MiniJavaParser  
 from MiniJavaVisitor   import MiniJavaVisitor  
 from ClassGetVisitor import ClassGetVisitor
 from ClassParamVisitor import ClassParamVisitor
-#from GrammarCheckVisitor import GrammarCheckVisitor
 from TypeCheckVisitor import TypeCheckVisitor
 
 def mainFunc(argv):
@@ -17,23 +15,17 @@ def mainFunc(argv):
     stream = CommonTokenStream(lexer)
     parser = MiniJavaParser(stream)
     tree = parser.goal()
-    v = ClassGetVisitor()#MiniJavaVisitor()
+    v = ClassGetVisitor()
     v.visit(tree)
-    #print(v.ParentTable)
-    #print(v.FuncTable)
     ClassParam = ClassParamVisitor(v.ClassTable,v.FuncTable,v.ParentTable)
     ClassParam.visit(tree)
-    #or c in ClassParam.Classes:
-    #    print(ClassParam.Classes[c])
     if ClassParam.HasError:
         return
-    #GrammarChecker = GrammarCheckVisitor()
-    #GrammarChecker.visit(tree)
-    #if GrammarChecker.HasError:
-    #    return
-    #print('Countinue')
     TypeChecker = TypeCheckVisitor(v.ClassTable,ClassParam.Classes)
     TypeChecker.visit(tree)
+    if TypeChecker.HasError:
+        return
+    print('success')
 
 if __name__ == '__main__':
     mainFunc(sys.argv)
