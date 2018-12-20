@@ -49,7 +49,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         if retValueType == 'None':
             return 'None'
         elif retValueType != retType:
-            print('函数返回值类型不匹配')
+            print('函数返回值类型不匹配 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
             return 'None'
         return
 
@@ -57,7 +57,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         vartype = self.visit(ctx.atype())
         if not vartype in self.Types:
             # TODO: 变量定义类型错误提示
-            print('变量定义类型错误')
+            print('变量定义类型错误 位置' + str(ctx.atype().start.line) + ':' + str(ctx.atype().start.column))
             return
         varname = str(ctx.Identifier())
         self.methodVars[varname] = vartype
@@ -71,7 +71,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return Id
         else:
             # 新建未定义类
-            print('新建未定义类')
+            print('新建未定义类 位置' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             return 'None'
         
         return 'None'
@@ -86,7 +86,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'INTARRAY'
         else:
             # 使用非整数申明数组
-            print('使用非整数申明数组')
+            print('使用非整数申明数组 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
             return 'None'
         
         return 'None'
@@ -101,7 +101,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'BOOL'
         else:
             # 取反非Bool值
-            print('取反非Bool值')
+            print('取反非Bool值 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
             return 'None'
 
         return 'None'
@@ -125,9 +125,8 @@ class TypeCheckVisitor(MiniJavaVisitor):
             else:
                 return self.methodVars[Id]
         else:
-            print(Id,self.nowClass,self.classVars,self.methodVars)
             # 使用未定义变量
-            print('使用未定义变量')
+            print('使用未定义变量 位置' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             return 'None'
         return self.visitChildren(ctx)
 
@@ -139,7 +138,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != 'INTARRAY':
             # 对非数组使用下标访问
-            print('对非数组使用下标访问')
+            print('对非数组使用下标访问 位置' + str(ctx.expression(0).start.line) + ':' + str(ctx.expression(0).start.column))
             return 'None'
 
         reType = self.visit(ctx.expression(1))
@@ -147,7 +146,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != 'INT':
             # 使用非整数作为下标
-            print('使用非整数作为下标')
+            print('使用非整数作为下标 位置' + str(ctx.expression(1).start.line) + ':' + str(ctx.expression(1).start.column))
             return 'None'
         else:
             return 'INT'
@@ -178,21 +177,21 @@ class TypeCheckVisitor(MiniJavaVisitor):
                 return 'BOOL'
             else:
                 # 使用非BOOL值进行&&运算
-                print('使用非BOOL值进行&&运算')
+                print('使用非BOOL值进行&&运算 位置' + str(ctx.op.line) + ':' + str(ctx.op.column))
                 return 'None'
         elif op == 'Less':
             if Type1 == 'INT' and Type2 == 'INT':
                 return 'BOOL'
             else:
                 # 使用非整数进行比较运算
-                print('使用非整数进行比较运算')
+                print('使用非整数进行比较运算 位置' + str(ctx.op.line) + ':' + str(ctx.op.column))
                 return 'None'
         else:
             if Type1 == 'INT' and Type2 == 'INT':
                 return 'INT'
             else:
                 # 使用非整数进行整数运算
-                print('使用非整数进行整数运算')
+                print('使用非整数进行整数运算 位置' + str(ctx.op.line) + ':' + str(ctx.op.column))
                 return 'None'
         return 'None'
         #return self.visitChildren(ctx)
@@ -205,7 +204,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != 'INTARRAY':
             # 获取非数组的length
-            print('获取非数组的length')
+            print('获取非数组的length 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
             return 'None'
         return 'INT'
         return self.visitChildren(ctx)
@@ -265,7 +264,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
 
         if not varType in self.ClassNames:
             # 使用不是类的变量调用函数
-            print('使用不是类的变量调用函数')
+            print('使用不是类的变量调用函数 位置' + str(ctx.expression(0).start.line) + ':' + str(ctx.expression(0).start.column))
             return 'None'
 
         funcName = str(ctx.Identifier())
@@ -285,9 +284,8 @@ class TypeCheckVisitor(MiniJavaVisitor):
         if funcCheck != 'None':
             return funcCheck
         else:
-            print(funcID,varType)
             # 使用未定义函数
-            print('使用未定义函数')
+            print('使用未定义函数 位置' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             return 'None'
         
         return 'None'
@@ -299,7 +297,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             pass
         elif reType != 'BOOL':
             # if()中使用非bool值
-            print('if()中使用非bool值')
+            print('if()中使用非bool值 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
         self.visit(ctx.statement(0))
         self.visit(ctx.statement(1))
         return 'None'
@@ -310,7 +308,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         reType = self.visit(ctx.expression())
         if reType != 'BOOL':
             # while()中使用非bool值
-            print('while()中使用非bool值')
+            print('while()中使用非bool值 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
         self.visit(ctx.statement())
         return 'None'
 
@@ -322,7 +320,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != 'INT':
             # println()中使用非int值
-            print('println()中使用非int值')
+            print('println()中使用非int值 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
         return 'None'
 
 
@@ -331,7 +329,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
         Id = str(ctx.Identifier())
         if not (Id in self.methodVars or Id in self.classVars):
             # 使用未定义变量
-            print('使用未定义变量')
+            print('使用未定义变量 位置' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             self.visit(ctx.expression())
             return 'None'
         
@@ -346,7 +344,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != IdType:
             # 赋值类型错误
-            print('赋值类型错误')
+            print('赋值类型错误 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
             return 'None'
 
         return 'None'
@@ -360,7 +358,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != 'INT':
             # 使用非int作为下标
-            print('使用非int作为下标')
+            print('使用非int作为下标 位置' + str(ctx.expression(0).start.line) + ':' + str(ctx.expression(0).start.column))
             self.visit(ctx.expression(1))
             return 'None'
         
@@ -369,7 +367,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
             return 'None'
         if reType != 'INT':
             # 使用非int给数组中元素赋值
-            print('使用非int给数组中元素赋值')
+            print('使用非int给数组中元素赋值 位置' + str(ctx.expression(1).start.line) + ':' + str(ctx.expression(1).start.column))
             return 'None'
     
 
