@@ -37,7 +37,8 @@ class Interpreter(MiniJavaVisitor):
             elif ClassParam.Vars[key] == 'INTARRAY':
                 retDict[key] = []
             else:
-                retDict[key] = self.newClass(ClassParam.Vars[key])
+                retDict[key] = {}#self.newClass(ClassParam.Vars[key])
+                retDict[key]['\\TYPE'] = ClassParam.Vars[key]
         return retDict
     
     def pushStack(self):
@@ -89,10 +90,10 @@ class Interpreter(MiniJavaVisitor):
         # 得到funcCite
         funcCite = []
         for item in paramValues:
-            if isinstance(item,int):
-                funcCite.append('INT')
-            elif isinstance(item,bool):
+            if isinstance(item,bool):
                 funcCite.append('BOOL')
+            elif isinstance(item,int):
+                funcCite.append('INT')
             elif isinstance(item,list):
                 funcCite.append('INTARRAY')
             elif isinstance(item,dict):
@@ -138,7 +139,7 @@ class Interpreter(MiniJavaVisitor):
         elif atype == 'INTARRAY':
             self.MethodVars[name] = []
         else:
-            self.MethodVars[name] = self.newClass(atype)
+            self.MethodVars[name] = {}#self.newClass(atype)
 
         return self.MethodVars[name]
 

@@ -55,11 +55,6 @@ statement : '{' ( statement )* '}' #CURLYBRACKET
 |   Identifier '[' expression ']' '=' expression ';' #ARRAYASSIGN
     ;
 
-IntergerLiteral : ([1-9][0-9]*|[0]);
-
-Identifier : [a-zA-Z_] [a-zA-Z0-9_]*;
-
-
 WS : [ \t\r\n]+ -> skip ;
 Comment : '/*' .*? '*/' -> skip ;
 LineComment : '//' ~[\r\n]* -> skip ; 
@@ -70,6 +65,11 @@ Add : '+' ;
 Min : '-' ;
 TRUE : 'true' ;
 FALSE : 'false' ;
+
+IntergerLiteral : ([1-9][0-9]*|[0]);
+
+Identifier : [a-zA-Z_] [a-zA-Z0-9_]*;
+
 /*
 class Factorial{
     public static void main(String[] a){
