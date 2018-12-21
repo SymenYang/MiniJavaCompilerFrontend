@@ -13,15 +13,22 @@ from Interpreter import Interpreter
 
 def mainFunc(argv):
     input = FileStream(argv[1])
+    LexerErrorListener = CustomFriendlyErrorListener('词法')
+    ParserErrorListener = CustomFriendlyErrorListener('语法')
     lexer = MiniJavaLexer(input=input)
+    lexer.removeErrorListeners()
+    lexer.addErrorListener(LexerErrorListener)
     stream = CommonTokenStream(lexer)
+
+    
     parser = MiniJavaParser(stream)
     parser.removeErrorListeners()
-    ErrorListener = CustomFriendlyErrorListener()
-    parser.addErrorListener(ErrorListener)
+    parser.addErrorListener(ParserErrorListener)
     tree = parser.goal()
     
-    if ErrorListener.HasError:
+    if LexerErrorListener.HasError:
+        print('词法解析错误，尝试忽略')
+    if ParserErrorListener.HasError:
         print('语法解析错误，退出编译')
         return
 
@@ -41,7 +48,7 @@ def mainFunc(argv):
         print('类型匹配错误，退出编译')
         return
     
-    print('无词法语法错误，开始运行')
+    print('无语法错误，开始运行')
     try:
         Intrprtr = Interpreter(ClassParam.Classes,v.ClassTable)
         Intrprtr.visit(tree)
