@@ -13,6 +13,7 @@ class Interpreter(MiniJavaVisitor):
         self.ClassVars = {}
         self.MethodVars = {}
         self.CallValues = []
+        self.HasError = False
 
     def visitGoal(self,ctx:MiniJavaParser.GoalContext):
         self.visit(ctx.mainClass())
@@ -28,6 +29,7 @@ class Interpreter(MiniJavaVisitor):
         # 新建一个className类的类并返回初始化好的内部变量表
         retDict = {}
         retDict['\\TYPE'] = className
+        retDict['\\ISNULL'] = False
         ClassParam = self.ClassParamTable[className]
         for key in ClassParam.Vars:
             if ClassParam.Vars[key] == 'INT':
@@ -39,6 +41,7 @@ class Interpreter(MiniJavaVisitor):
             else:
                 retDict[key] = {}#self.newClass(ClassParam.Vars[key])
                 retDict[key]['\\TYPE'] = ClassParam.Vars[key]
+                retDict[key]['\\ISNULL'] = True
         return retDict
     
     def pushStack(self):
@@ -146,6 +149,14 @@ class Interpreter(MiniJavaVisitor):
     def visitARRAYSEARCH(self, ctx:MiniJavaParser.ARRAYSEARCHContext):
         array = self.visit(ctx.expression(0))
         pos = self.visit(ctx.expression(1))
+        if pos >= len(array):
+            self.HasError = True
+            if len(array) != 0:
+                print('数组访问越界， 位置:' + str( ctx.expression(1).start.line) + ':' + str(ctx.expression(1).start.column) + ' 数组大小为:' + str(len(array)) + ' 访问位置:' + str(pos))
+                raise RuntimeError('数组访问越界')
+            else:
+                print('使用未初始化数组，位置:'+ str( ctx.expression(0).start.line) + ':' + str(ctx.expression(0).start.column))
+                raise RuntimeError('使用未初始化数组')
         return array[pos]
 
     def visitLENGTH(self, ctx:MiniJavaParser.LENGTHContext):
@@ -159,6 +170,10 @@ class Interpreter(MiniJavaVisitor):
         expressions = ctx.expression()[1:]
         for item in expressions:
             callValues.append(self.visit(item))
+        
+        if classVar['\\ISNULL']:
+            print('使用未初始化类中的函数，位置:' + str( ctx.expression(0).start.line) + ':' + str(ctx.expression(0).start.column))
+            raise RuntimeError('使用未初始化类中的函数')
         
         return self.callFunc(classVar,funcName,callValues)
 
