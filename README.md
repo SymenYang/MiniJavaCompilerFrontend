@@ -10,7 +10,7 @@ $ python src/Main.py PATHtoTestSample
 ### 重新编译Antlr4
 ```
 $ cd src
-$ Antlr4 MiniJava.g4 -visitor -Dlanguage=Python3
+$ antlr4 MiniJava.g4 -visitor -Dlanguage=Python3
 ```
 ## 运行平台：
 理论上全平台，测试时使用的MacOS，python3.6.7 java 1.8.0_121
