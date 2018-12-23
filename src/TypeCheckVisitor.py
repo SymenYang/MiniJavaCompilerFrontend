@@ -362,9 +362,17 @@ class TypeCheckVisitor(MiniJavaVisitor):
         if reType == 'None':
             return 'None'
         if reType != IdType:
-            # 赋值类型错误
-            self.HasError = True
-            print('赋值类型错误 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
+            if IdType in self.ClassNames and reType in self.ClassNames:
+                if IdType in self.ClassParam[reType].Parents:
+                    # 子类赋值给父类变量
+                    pass
+                else:
+                    self.HasError = True
+                    print('赋值类型错误 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
+            else:
+                # 赋值类型错误
+                self.HasError = True
+                print('赋值类型错误 位置' + str(ctx.expression().start.line) + ':' + str(ctx.expression().start.column))
             return 'None'
 
         return 'None'
