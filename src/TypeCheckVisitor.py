@@ -239,6 +239,8 @@ class TypeCheckVisitor(MiniJavaVisitor):
 
     def checkFunctions(self,funcID,classParam):
         funcName = funcID[0]
+        FuncReturn = 'None'
+        FuncBelongs = []
         for item in classParam.Funcs:
             if item[0] == funcName:
                 paramTuple = item[1]
@@ -246,6 +248,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
                 if len(paramTuple) != len(funcTuple):
                     continue
                 sameFlag = True
+                hasDistance = False
                 for i in range(len(paramTuple)):
                     if paramTuple[i] == funcTuple[i]:
                         # 对应类型相等
@@ -254,6 +257,7 @@ class TypeCheckVisitor(MiniJavaVisitor):
                         # 对应类型是一个类
                         if paramTuple[i] in self.ClassParam[funcTuple[i]].Parents:
                             # 模版函数该参数类型是调用参数的父类
+                            hasDistance = True
                             continue
                         else:
                             # 模版函数该参数类型不是调用参数的父类
@@ -264,10 +268,19 @@ class TypeCheckVisitor(MiniJavaVisitor):
                         sameFlag = False
                         break
                 if sameFlag:
-                    return classParam.Funcs[item][1]
+                    #return classParam.Funcs[item][1]
+                    # 记录为一个可能的retFunc
+                    # 更改加入功能：若参数完全匹配，则直接返回，否则查看是否有都满足的可能
+                    FuncReturn = classParam.Funcs[item][1]
+                    if not hasDistance:
+                        return FuncReturn,[]
+                    FuncBelongs.append(classParam.Funcs[item][0])
+                    if len(FuncBelongs) > 1:
+                        # 有一个冲突问题
+                        return 'COLLISION',FuncBelongs
             else:
                 continue
-        return 'None'
+        return FuncReturn,FuncBelongs
 
     # Visit a parse tree produced by MiniJavaParser#FUNCTION.
     def visitFUNCTION(self, ctx:MiniJavaParser.FUNCTIONContext):
@@ -294,14 +307,23 @@ class TypeCheckVisitor(MiniJavaVisitor):
         
         classParam = self.ClassParam[varType]
         funcID = (funcName,funcCite)
-        funcCheck = self.checkFunctions(funcID,classParam)
-        if funcCheck != 'None':
-            return funcCheck
-        else:
+        funcCheck,Belongs = self.checkFunctions(funcID,classParam)
+        if funcCheck == 'None':
             # 使用未定义函数
             self.HasError = True
             print('使用未定义函数 位置' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column))
             return 'None'
+            
+        elif funcCheck == 'COLLISION':
+            # 函数冲突
+            print('使用的函数有多于一个满足的解释：位置' + str(ctx.Identifier().getSymbol().line) + ':' + str(ctx.Identifier().getSymbol().column) + ' 分别为',end = '')
+            for item in Belongs:
+                print(item + '.' + funcName + ' , ',end = '')
+            print('')
+            self.HasError = True
+            return 'None'
+        else:
+            return funcCheck
         
         return 'None'
 

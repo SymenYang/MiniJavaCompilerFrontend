@@ -56,6 +56,7 @@ class Interpreter(MiniJavaVisitor):
 
     def checkFunctions(self,funcID,classParam):
         funcName = funcID[0]
+        tmpReturn = 'None'
         for item in classParam.Funcs:
             if item[0] == funcName:
                 paramTuple = item[1]
@@ -63,6 +64,7 @@ class Interpreter(MiniJavaVisitor):
                 if len(paramTuple) != len(funcTuple):
                     continue
                 sameFlag = True
+                hasDistance = False
                 for i in range(len(paramTuple)):
                     if paramTuple[i] == funcTuple[i]:
                         # 对应类型相等
@@ -71,6 +73,7 @@ class Interpreter(MiniJavaVisitor):
                         # 对应类型是一个类
                         if paramTuple[i] in self.ClassParamTable[funcTuple[i]].Parents:
                             # 模版函数该参数类型是调用参数的父类
+                            hasDistance = True
                             continue
                         else:
                             # 模版函数该参数类型不是调用参数的父类
@@ -81,10 +84,15 @@ class Interpreter(MiniJavaVisitor):
                         sameFlag = False
                         break
                 if sameFlag:
-                    return classParam.Funcs[item]
+                    # 若参数类型完全没有差异，直接return
+                    # 否则先记录再return
+                    if hasDistance:
+                        tmpReturn = classParam.Funcs[item]
+                    else:
+                        return classParam.Funcs[item]
             else:
                 continue
-        return 'None'
+        return tmpReturn
 
     def callFunc(self,targetClass,funcName,paramValues):
         # target Class: {Class Param}, funcName: string, paramValues : []

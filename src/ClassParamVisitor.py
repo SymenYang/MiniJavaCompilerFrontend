@@ -17,28 +17,27 @@ class ClassParam:
             return
         parent = ParentTable[ClassName]
 
-        extendCheckList = [ClassName]
-
         while (parent != 'None'):
             if not parent in ClassTable:
                 print(self.name + '类，继承自未定义类：' + parent)
                 self.HasError = True
                 return
 
-            if parent in extendCheckList:
+            if parent in self.Parents:
                 print('类继承出现循环：',end='')
-                for item in extendCheckList:
+                for item in self.Parents:
                     print(item + ' -> ',end='')
                 print(parent)
                 self.HasError = True
                 return
-            extendCheckList.append(parent)
-
             self.Parents.append(parent)
+            parent = ParentTable[parent]
+        
+        for i in range(len(self.Parents) - 1, -1 ,-1):
+            parent = self.Parents[i]
             for func in FuncTable:
                 if func[0] == parent:
                     self.Funcs[(func[1],func[2])] = [parent] + FuncTable[func]
-            parent = ParentTable[parent]
         for func in FuncTable:
             if func[0] == ClassName:
                 self.Funcs[(func[1],func[2])] = [ClassName] + FuncTable[func]
