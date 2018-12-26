@@ -19,9 +19,10 @@ class ClassB extends ClassA {
 class testClass {
     ClassA a;
     ClassB b;
-
+    boolean c;
     public int ComputeFac(int num){
         b = new ClassB();
+        c = b.ComputeFac(true);
         a = b;
         //b = a;
         return num;
