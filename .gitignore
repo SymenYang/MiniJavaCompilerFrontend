@@ -3,3 +3,4 @@
 .antlr/
 *.pyc
 __pycache__/
+*.pdf
